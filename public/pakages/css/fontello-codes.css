@@ -1,2 +1,3 @@
 
-.icon-angle-down:before { content: '\f107'; } /* '' */
+.icon-down-open-big:before { content: '\e800'; } /* '' */
+.icon-left-open-big:before { content: '\e801'; } /* '' */
