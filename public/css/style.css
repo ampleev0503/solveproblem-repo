@@ -24,9 +24,12 @@ body {
     height: 90px; }
     .toolbar .content a, .toolbar .content nav {
       display: inline-block;
-      color: #fff; }
+      color: #fff;
+      cursor: pointer; }
       .toolbar .content a:hover, .toolbar .content nav:hover {
         color: #6acdb1; }
+      .toolbar .content a:active, .toolbar .content nav:active {
+        color: #ffb084; }
     .toolbar .content .content__left {
       margin-left: 4%; }
     .toolbar .content .content__center {
@@ -45,6 +48,8 @@ body {
       letter-spacing: 3.4px; }
       .toolbar .content .logo:hover {
         color: #6acdb1; }
+      .toolbar .content .logo:active {
+        color: #51a288; }
     .toolbar .content .registration {
       margin-right: 14px; }
 
@@ -133,7 +138,10 @@ body {
     cursor: pointer; }
     .task-block input[type="submit"]:hover {
       background-color: #51a288;
-      border: 3px solid #51a288; }
+      border: 3px solid #51a288;
+      border-left: none; }
+    .task-block input[type="submit"]:active {
+      box-shadow: inset 0 1px 3px rgba(0, 10, 20, 0.5), 0 1px #535e68, 0 0 1px #56606a; }
   .task-block .sample {
     width: 942px;
     color: #818181;
@@ -154,6 +162,8 @@ body {
   color: #ffb084; }
   .questions:hover {
     color: #6acdb1; }
+  .questions:active {
+    color: #51a288; }
   .questions span {
     display: inline-block;
     font-size: 57px;
@@ -228,6 +238,8 @@ body {
         font-weight: 700; }
       .services .services__wrapper .list-link:hover {
         color: #6acdb1; }
+      .services .services__wrapper .list-link:active {
+        color: #ffb084; }
   .services .link-btn {
     display: inline-block;
     margin: 10px auto 60px auto;
@@ -240,6 +252,8 @@ body {
     .services .link-btn:hover {
       color: #fff;
       background-color: #6acdb1; }
+    .services .link-btn:active {
+      box-shadow: inset 0 1px 3px rgba(0, 10, 20, 0.5), 0 1px #535e68, 0 0 1px #56606a; }
 
 .footer {
   height: 626px;
@@ -269,6 +283,8 @@ body {
     line-height: 40px; }
     .footer .footer-link:hover {
       color: #6acdb1; }
+    .footer .footer-link:active {
+      color: #ffb084; }
   .footer .socials {
     display: flex;
     justify-content: space-between;
@@ -285,6 +301,8 @@ body {
       background-position: center 54%; }
       .footer .socials .socials__item:hover {
         background-color: #6acdb1; }
+      .footer .socials .socials__item:active {
+        background-color: #ffb084; }
     .footer .socials .facebook {
       background-image: url("../img/facebook.svg"); }
     .footer .socials .twitter {
@@ -305,6 +323,8 @@ body {
     letter-spacing: 2px; }
     .footer .footer__logo:hover {
       color: #ffb084; }
+    .footer .footer__logo:active {
+      color: #6acdb1; }
   .footer .copyright {
     width: 150px;
     margin: 10px auto;
