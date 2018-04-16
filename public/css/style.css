@@ -219,7 +219,7 @@ body {
     letter-spacing: 1.8px; }
   .services .services__wrapper {
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     flex-wrap: wrap;
     width: 960px;
     margin: 0 auto 40px auto;
@@ -379,24 +379,26 @@ body {
 .registration-block .form-wrapper {
   max-width: 720px;
   margin: -37px 0 0 51px; }
-  .registration-block .form-wrapper label {
-    font-size: 29.76px;
-    font-weight: 400;
-    color: #9a9a9a;
-    letter-spacing: 0.744px; }
-  .registration-block .form-wrapper input[type="text"], .registration-block .form-wrapper input[type="email"], .registration-block .form-wrapper input[type="tel"], .registration-block .form-wrapper input[type="password"] {
-    display: block;
-    width: 667px;
-    margin: 5px 0 18px -5px;
-    padding: 14px 24px;
-    font-family: "Myriad_Pro_Regular", sans-serif;
-    font-size: 29.76px;
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: -1px;
-    border: 1px solid #575757;
-    border-radius: 10px;
-    outline: none; }
+
+.registration-block span {
+  font-size: 29.76px;
+  font-weight: 400;
+  color: #9a9a9a;
+  letter-spacing: 0.744px; }
+
+.registration-block input[type="text"], .registration-block input[type="email"], .registration-block input[type="tel"], .registration-block input[type="password"] {
+  display: block;
+  width: 667px;
+  margin: 5px 0 18px -5px;
+  padding: 14px 24px;
+  font-family: "Myriad_Pro_Regular", sans-serif;
+  font-size: 29.76px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -1px;
+  border: 1px solid #575757;
+  border-radius: 10px;
+  outline: none; }
 
 .registration-block .note {
   color: #9a9a9a;
@@ -417,7 +419,7 @@ body {
     max-width: 294px; }
 
 .registration-block .note-sm {
-  margin-left: 370px;
+  margin-left: 360px;
   color: #bdbdbd;
   font-size: 20px;
   font-style: italic;
