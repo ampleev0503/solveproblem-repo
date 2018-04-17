@@ -1,0 +1,445 @@
+@import "fonts.sass"
+@import "variables.sass"
+body
+  font-family: $font-regular
+  font-size: 26px
+  a
+    text-decoration: none
+  input
+    &::-webkit-input-placeholder
+      color: $color-placeholder
+      opacity: 1
+      transition: opacity 0.3s ease
+    &:focus::-webkit-input-placeholder
+      opacity: 0
+      transition: opacity 0.3s ease
+    &:-moz-placeholder
+      color: $color-placeholder
+      opacity: 1
+      transition: opacity 0.3s ease
+    &:focus:-moz-placeholder
+      opacity: 0
+      transition: opacity 0.3s ease
+    &::-moz-placeholder
+      color: $color-placeholder
+      opacity: 1
+      transition: opacity 0.3s ease
+    &:focus::-moz-placeholder
+      opacity: 0
+      transition: opacity 0.3s ease
+    &:-ms-input-placeholder
+      color: $color-placeholder
+      opacity: 1
+      transition: opacity 0.3s ease
+    &:focus:-ms-input-placeholder
+      opacity: 0
+      transition: opacity 0.3s ease
+.container
+  min-height: calc(100vh - 631px)
+.toolbar
+  height: 102px
+  .content
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 102px
+    a, nav
+      display: inline-block
+      color: $color-light
+      cursor: pointer
+      &:hover
+        color: $color-2
+      &:active
+        color: $color-1
+    .content__left
+      margin-left: 4%
+    .content__center
+      margin-left: -123px
+    .content__right
+      margin-right: 4%
+    .services-nav
+      margin-left: 14px
+    i
+      margin-left: 0
+      margin-right: 4px
+    .logo
+      font-family: $font-logo
+      color: $color-1
+      font-size: 65px
+      letter-spacing: 3.4px
+      &:hover
+        color: $color-2
+      &:active
+        color: $color-3
+    .registration
+      margin-right: 14px
+.task-block
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 714px
+  margin-top: -102px
+  background-color: $color-grey
+  background-image: url("../img/task-box-shadow.png"), url("../img/task-box.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center 100%
+  h1
+    margin: 0
+    color: $color-light
+    font-size: 88px
+    font-weight: 700
+    letter-spacing: 6.5px
+    line-height: 42px
+  h4
+    margin: 41px 0 0 0
+    color: $color-light
+    font-size: 22px
+    font-weight: 700
+    letter-spacing: 1.3px
+  form
+    height: 80px
+    overflow: hidden
+    margin: 41px 0 0 0
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 13px
+    box-shadow: 6px 6px 15px rgba(106,205,177,0.3), -6px -6px 15px rgba(106,205,177,0.3), -6px 6px 15px rgba(106,205,177,0.3), 6px -6px 15px rgba(106,205,177,0.3)
+  input[type="text"], input[type="submit"]
+    outline: none
+  input[type="text"]
+    width: 627px
+    padding: 24px 40px
+    border: 3px solid $color-light
+    border-top-left-radius: 13px
+    border-bottom-left-radius: 13px
+    border-right: none
+  input[type="submit"]
+    padding: 20px 15px
+    border: 3px solid $color-2
+    border-top-right-radius: 13px
+    border-bottom-right-radius: 13px
+    border-left: none
+    font-size: 33px
+    color: $color-light
+    letter-spacing: -1px
+    background-color: $color-2
+    cursor: pointer
+    &:hover
+      background-color: $color-3
+      border: 3px solid $color-3
+      border-left: none
+    &:active
+      box-shadow: inset 0 1px 3px rgba(0,10,20,.5), 0 1px rgb(83,94,104), 0 0 1px rgb(86,96,106)
+  .sample
+    width: 942px
+    color: $color-grey
+    font-size: 19.43px
+    font-weight: 700
+    letter-spacing: 0.8px
+    line-height: 42px
+    text-align: left
+.questions
+  display: block
+  width: 130px
+  margin: -72px auto 0 auto
+  padding-bottom: 7px
+  font-size: 30px
+  letter-spacing: 1px
+  text-align: center
+  color: $color-1
+  &:hover
+    color: $color-2
+  &:hover span
+    transform: rotate(0deg)
+  &:active
+    color: $color-3
+  &:active span
+    transform: rotate(0deg)
+  span
+    display: inline-block
+    font-size: 57px
+    color: $color-light
+    transform: rotate(21deg)
+.advantages
+  display: flex
+  justify-content: center
+  .advantages__item
+    max-width: 280px
+    margin: 145px 80px 93px 80px
+    color: $color-dark
+    text-align: center
+    h2
+      margin-bottom: 10px
+      font-size: 37px
+      letter-spacing: 2.8px
+    p
+      margin: 0
+      font-size: 19px
+      letter-spacing: 0.4px
+.how-it-works
+  background: $color-1
+  h2
+    margin-bottom: 0
+    padding-top: 20px
+    text-align: center
+    font-size: 68px
+    color: $color-light-2
+    font-weight: 700
+    letter-spacing: 4px
+  .scheme
+    width: 100%
+    margin: 0 auto
+    text-align: center
+    img
+      width: 90%
+      padding: 20px 30px 30px 30px
+.services
+  text-align: center
+  h2
+    margin-top: 20px
+    margin-bottom: 19px
+    font-size: 73px
+    font-weight: 700
+    letter-spacing: 1.8px
+  .services__wrapper
+    display: flex
+    justify-content: flex-start
+    flex-wrap: wrap
+    width: 960px
+    margin: 0 auto 40px auto
+    color: $color-dark-2
+    .services__list
+      width: 280px
+      margin: 0 10px
+      padding: 10px
+    h3
+      font-size: 30px
+      text-align: left
+    .list-link
+      display: block
+      text-align: left
+      font-size: 20px
+      color: $color-dark-2
+      line-height: 30px
+      &:last-child
+        margin-top: 20px
+        font-weight: 700
+      &:hover
+        color: $color-2
+      &:active
+        color: $color-1
+.link-btn
+  display: inline-block
+  margin: 10px auto 60px auto
+  padding: 10px 45px
+  font-size: 40px
+  color: $color-2
+  letter-spacing: 1px
+  border: 3px solid $color-2
+  border-radius: 10px
+  &:hover
+    color: $color-light
+    background-color: $color-2
+  &:active
+    box-shadow: inset 0 1px 3px rgba(0,10,20,.5), 0 1px rgb(83,94,104), 0 0 1px rgb(86,96,106)
+.footer
+  color: $color-light
+  background-image: url("../img/footer-shadow.png"), url("../img/footer.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center 100%
+  .footer__content
+    display: flex
+    justify-content: space-around
+    margin: 0 10%
+  .footer__block
+    margin: 0 10px 0 10px
+    h3
+      font-size: 27px
+      font-weight: 700
+      letter-spacing: 0.7px
+      text-align: left
+    p
+      font-size: 22px
+  .footer-link
+    display: block
+    font-size: 22px
+    text-align: left
+    color: $color-light
+    line-height: 40px
+    &:hover
+      color: $color-2
+    &:active
+      color: $color-1
+.footer__socials-logo-wrapper
+  display: flex
+  justify-content: flex-start
+  width: 979px
+  margin: 165px auto 0 auto
+.socials
+  display: flex
+  justify-content: space-between
+  width: 254px
+  padding-top: 7px
+  .socials__item
+    display: inline-block
+    width: 40px
+    height: 40px
+    background-repeat: no-repeat
+    background-position: center 54%
+    &:hover
+      background-color: $color-2
+    &:active
+      background-color: $color-1
+  .facebook
+    background-image: url("../img/facebook.svg")
+  .twitter
+    background-image: url("../img/twitter.svg")
+  .vk
+    background-image: url("../img/vk.svg")
+  .google-plius
+    background-image: url("../img/google-plius.svg")
+  .smile
+    background-image: url("../img/smile.svg")
+.footer__logo
+  display: block
+  margin-left: 108px
+  font-family: $font-logo
+  color: $color-light
+  font-size: 40px
+  letter-spacing: 2px
+  &:hover
+    color: $color-1
+  &:active
+    color: $color-2
+.copyright
+  width: 150px
+  margin: 0 auto
+  padding: 10px 0 20px 0
+  font-size: 21px
+  letter-spacing: 1px
+
+// Страница регистрации
+
+.toolbar-color
+  background-color: $color-dark-3
+.registration-block
+  .home-link
+    display: inline-block
+    margin-top: 20px
+    padding-left: 4%
+    font-size: 24px
+    color: $color-dark-3
+    letter-spacing: 0.6px
+    &:hover
+      color: $color-2
+    &:active
+      color: $color-1
+  h1
+    margin-top: 22px
+    font-size: 58px
+    text-align: center
+    color: $color-dark-3
+    letter-spacing: 4.1px
+  .form-block
+    display: flex
+    justify-content: flex-start
+    max-width: 1515px
+    margin: 0 auto
+  .img-form
+    width: 315px
+    height: 455px
+    margin: 77px 30px 40px 19px
+    text-align: center
+    background-image: url("../img/form.jpg")
+  .form-wrapper
+    max-width: 720px
+    margin: -37px 0 0 51px
+  span
+    font-size: 29.76px
+    font-weight: 400
+    color: $color-label
+    letter-spacing: 0.744px
+  input[type="text"], input[type="email"], input[type="tel"], input[type="password"]
+    display: block
+    width: 667px
+    margin: 5px 0 18px -5px
+    padding: 14px 24px
+    font-family: $font-regular
+    font-size: 29.76px
+    font-style: italic
+    font-weight: 400
+    letter-spacing: -1px
+    border: 1px solid $color-dark-3
+    border-radius: 10px
+    outline: none
+  .note
+    color: $color-grey-2
+    font-size: 26px
+    letter-spacing: 0.6px
+    margin-bottom: 20px
+  .form__left-block
+    display: inline-block
+    margin-right: 23px
+    input[type="text"]
+      max-width: 294px
+  .form__right-block
+    display: inline-block
+    margin-left: 5px
+    input[type="text"]
+      max-width: 294px
+  .note-sm
+    margin-left: 360px
+    color: $color-grey-3
+    font-size: 20px
+    font-style: italic
+    letter-spacing: 0.5px
+  .eye
+    display: inline-block
+    width: 57px
+    height: 37px
+    background-image: url("../img/eye.svg")
+    background-repeat: no-repeat
+    background-size: auto
+    background-position: center 60%
+  .eye1
+    margin: -69px -698px 59px 641px
+  .eye2
+    margin: -69px -698px 88px 641px
+  input[type="checkbox"]
+    display: none
+  .checkbox-custom
+    display: inline-block
+    position: relative
+    width: 46px
+    height: 46px
+    margin: 25px 20px -16px -10px
+    border: 1px solid $color-dark-3
+    border-radius: 10px
+  .checkbox:checked + .checkbox-custom
+    background-image: url("../img/checked.png")
+    background-repeat: no-repeat
+    background-size: auto
+    background-position: center 60%
+  .terms-of-use
+    color: $color-grey-2
+    font-size: 27px
+    font-weight: 400
+    letter-spacing: 0.744px
+  .terms-of-use-link
+    text-decoration: underline
+  .link-btn
+    display: block
+    border-width: 1px
+    margin: 48px auto 60px auto
+    padding: 19px 45px
+    font-size: 34px
+    letter-spacing: 0
+    background-color: $color-light
+    &:hover
+      background-color: $color-2
+      outline: none
