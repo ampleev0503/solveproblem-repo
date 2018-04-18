@@ -21,6 +21,8 @@ abstract class Controller
 
     public function render($action)
     {
+        
+       // print_r($action);
         $this->action = $action ?: $this->defaultAction;  //получаем действие
         $method = 'action'.ucfirst($this->action);        //преобразовываем к виду actionIndex
         $this->content = $this->$method();               //Получаем контент вложеного шаблона

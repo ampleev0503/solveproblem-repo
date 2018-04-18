@@ -18,6 +18,6 @@ class TemplateRender
         extract($params);
         $templatePath = TEMPLATES_DIR.$template.".php";
         include $templatePath;
-       return  ob_get_clean();
+        return  ob_get_clean();
     }
 }
