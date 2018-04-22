@@ -1,0 +1,149 @@
+.authorization-block {
+	width: 720px;
+	margin: 0 auto;
+}
+
+.authorization-block h1 {
+	font-size: 57.8px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 2.63;
+	letter-spacing: 1.4px;
+	text-align: center;
+	color: #575757;
+	width: 500px;
+	margin: 0 auto;
+}
+
+.lg__fr__btn {
+	display: flex;
+	justify-content: space-between;
+}
+
+.login-btn {
+	display: block;
+	width: 339px;
+	height: 78px;  /*Странно ОЧЕНЬ!!!! */
+	border-radius: 10px;
+	border: solid 1px #6acdb1;
+	background: transparent;
+	font-size: 34.1px;
+	letter-spacing: 0.9px;
+	color: #6acdb1;
+	transition: 0.5s;
+	outline: none;
+
+}
+
+.login-btn:hover {
+	background: #6acdb1;
+	color: white;
+	transition: 0.5s;
+}
+
+.forgot-btn {
+	display: block;
+	width: 339px;
+	height: 76px;  /*Странно ОЧЕНЬ!!!! */
+	border-radius: 10px;
+	border: solid 1px #FF706D;
+	background: transparent;
+	font-size: 34.1px;
+	letter-spacing: 0.9px;
+	color: #FF706D;
+	transition: 0.5s;
+	outline: none;
+
+}
+
+.forgot-btn a {
+	display: block;
+	height: 100%;
+	color: #FF706D;
+	text-align: center;
+	margin-top: 19px;
+	transition: 0.5s;
+
+}
+.forgot-btn:hover a {
+	color: #ffffff;
+	transition: 0.5s;
+
+}
+.forgot-btn:hover {
+	background: #FF706D;
+}
+.link-to-registration {
+	font-size: 26px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 1.91;
+	letter-spacing: 0.6px;
+	color: #9a9a9a;
+}
+.link-to-registration a {
+	border-bottom:  1px solid;
+	color: #6acdb1;
+	transition: 0.5s;
+
+}
+.link-to-registration a:hover {
+	color: #ffb084;
+	transition: 0.5s;
+}
+.authorization-block h4 {
+	width: 470px;
+	text-align: center;
+	margin: 30px auto 30px;
+
+}
+.authorization-block form input[type="email"]::-webkit-input-placeholder {
+	color: #ddd;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+	font-style: italic;
+	text-align: center;
+}
+
+.authorization-block form input[type="email"]:-ms-input-placeholder {
+	color: #ddd;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+	font-style: italic;
+	text-align: center;
+}
+
+.authorization-block form input[type="email"]::-moz-placeholder {
+	color: #ddd;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+	font-style: italic;
+	text-align: center;
+
+}
+
+.authorization-block form input[type="password"]::-webkit-input-placeholder {
+	color: #ddd;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+	font-style: italic;
+	text-align: center;
+}
+
+.authorization-block form input[type="password"]:-ms-input-placeholder {
+	color: #ddd;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+	font-style: italic;
+	text-align: center;
+}
+
+.authorization-block form input[type="password"]::-moz-placeholder {
+	color: #ddd;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+	font-style: italic;
+	text-align: center;
+}
