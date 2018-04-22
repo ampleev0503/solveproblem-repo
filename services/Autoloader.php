@@ -1,31 +1,26 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: artem
- * Date: 06.04.2018
- * Time: 14:02
- */
-
 namespace app\services;
-class RequestClassException extends \Exception{}
 
-//Автозагрузчик
+use app\base\App;
+
+
+// класс, который будет подключать нам нужные файлы по имени класса
+// самое важное тут то, что в данный момент $className
+// совпадает с названием файла php, в котором лежит этот $className
 class Autoloader
 {
+    private $fileExtension = ".php";
 
-    public function loadClass($classname)
+    public function loadClass($className)
     {
-        //Подменяем пути , на корень проекта
-        $pathToClass = str_replace(['app\\','\\'],[ROOT_DIR,'/'],$classname);
-        $fileName =  $pathToClass.".php";
-
-
-        if(file_exists($fileName)){
-            require_once "$fileName";
-        }else{
-            //если файла не существует создаем исключение
-            //которое отлавливается в FrontController
-            throw new RequestClassException('class');
+        // имя класса совпадает с именем файла, в котором он находится
+        // поэтому если существует такой файл, то существует и класс.
+        // "app\\" заменится на "ROOT_DIR", "\" заменится на "/"
+        // "ROOT_DIR" - ссылается на директорию ВСЕГО проекта. Эта константа подключена в файле index.php
+        $className = str_replace(["app\\", "\\"], [App::call()->config['root_dir'] , "/"], $className);
+        $className .= $this->fileExtension;
+        if(file_exists($className)){
+            require $className;
         }
     }
 }

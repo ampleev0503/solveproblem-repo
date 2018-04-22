@@ -1,56 +1,60 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: artem
- * Date: 06.04.2018
- * Time: 22:33
+ * User: Вадим
+ * Date: 15.12.2017
+ * Time: 17:28
  */
 
 namespace app\controllers;
 
-//Родительский контролер, рендерит страницы
+
+use app\interfaces\IRenderer;
+use app\services\renderers\TemplateRenderer;
+
 abstract class Controller
 {
+    private $action;
+    private $defaultAction = 'index';
+    private $layout = 'main';
+    protected $useLayout = false;
 
-    protected $layout = true;  // главный шаблон
-    protected $action;         //действие
-    protected $content = [];    // контент вложеного шаблона
-    protected $defaultAction = 'index'; //страница по умолчанию
+    // здесь будет храниться экземпляр текущего рендеринга
+    private $renderer;
 
 
-
-    public function render($action)
+    public function __construct(IRenderer $renderer = null)
     {
-        $this->action = $action ?: $this->defaultAction;  //получаем действие
-        $method = 'action'.ucfirst($this->action);        //преобразовываем к виду actionIndex
-        $this->content = $this->$method();               //Получаем контент вложеного шаблона
+        $this->renderer = $renderer;
+    }
 
-        if ($this->layout){
-            //рендер с главным шаблоном
-           echo $this->renderTemplate('layouts/main',['content'=>$this->content]);
-        }else{
-            //рендер только вложеного шаблона
-            echo $this->content;
+
+    public function runAction($action = null) {
+        $this->action = $action ?: $this->defaultAction;
+        $method = 'action' . ucfirst($this->action);
+        if (method_exists($this, $method)) {
+            $this->$method();
+        } else
+            echo "404";
+
+    }
+
+
+    //определяем: с лэйаутом рендерить страницу или без него
+    public function render($template, $params = []) {
+
+        if ($this->useLayout) {
+            return $this->renderTemplate("layouts/{$this->layout}",
+                ['content' => $this->renderTemplate($template, $params)]);
+        }else {
+            return $this->renderTemplate($template, $params);
         }
     }
 
+    public function renderTemplate($template, $params = []) {
 
-    /*
-  рендеринг шаблона
-  $template - имя шаблона
-  $params - даные
-   @return шаблон
-  */
-    public function renderTemplate($template, $params=[])
-    {
-        return (new \app\services\TemplateRender())->render($template, $params);
-    }
-
-    //при вызове несуществующего action уводит на страницу "not found"
-    public function __call($name, $params)
-    {
-        $this->layout = false;
-        return $this->renderTemplate('error/notfound');
+        //здесь уже вызывается метод render($template, $params) из классов шаблона рендеринга (папка renderers)
+        return $this->renderer->render($template, $params);
     }
 
 }

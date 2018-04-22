@@ -2,12 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: Вадим
- * Date: 14.04.2018
- * Time: 17:09
+ * Date: 18.12.2017
+ * Time: 17:47
  */
 
 namespace app\models;
 
+use app\base\App;
 use app\services\Db;
 
 
@@ -103,7 +104,7 @@ abstract class Repository
      * @return Db
      */
     public static function getDb() {
-        return Db::getInstance();
+        return App::call()->db;
     }
 
 

@@ -1,30 +1,30 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Вадим
- * Date: 14.04.2018
- * Time: 16:37
- */
-
 namespace app\services;
-
-use app\traits\TSingleton;
 
 
 class Db
 {
-    use TSingleton;
-
     private $conn = null;
 
-    private $config = [
-        'driver' => 'mysql',
-        'host' => 'localhost',
-        'login' => 'gu_team',
-        'password' => 'gu_team',
-        'database' => 'dbslvprblm',
-        'charset' => 'utf8'
-    ];
+    private $config;
+
+
+    //private static $instance = null;
+
+    /**
+     * Db constructor.
+     * @param array $config
+     */
+    public function __construct($driver, $host, $login, $password, $database, $charset)
+    {
+        $this->config['driver'] = $driver;
+        $this->config['host'] = $host;
+        $this->config['login'] = $login;
+        $this->config['password'] = $password;
+        $this->config['database'] = $database;
+        $this->config['charset'] = $charset;
+    }
+
 
     //этот метод вызовется только тогда, когда в этом есть необходимость (есть какой-то запрос к бд, соответсвенно этот метод вызовется только в этот момент)
     private function getConnection()
@@ -37,7 +37,12 @@ class Db
                 $this->config['password']
             );
 
+            //устанавливаем соответсвующие аттрибуты для возврата данных из бд в виде ассоц массива
+            //$this->conn->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
             $this->conn->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
+
+            //устанавливаем режим ошибок, чтобы ошибки приходили в виде exception
+            //$this->conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
         return $this->conn;
     }
@@ -90,6 +95,9 @@ class Db
         var_dump($class);
         echo "<br>";*/
 
+        //так как для нашего объекта PDO мы устанавливали аттрибуты для возврата данных в виде ассоц массива, то тут указываем fetchAll() (вернёт массив
+        // со всеми строками результирующего набора в виде ассоциативных масивов)
+        //return $this->query($sql, $params)->fetchAll();
         $smtp = $this->query($sql, $params);
         if($class){
             $smtp->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, $class);
@@ -97,4 +105,10 @@ class Db
         return $smtp->fetchAll();
     }
 
+
+//    public function queryObject($sql, $params, $class) {
+//        $smtp = $this->query($sql, $params);
+//        $smtp->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, $class);
+//        return $smtp->fetch();
+//    }
 }

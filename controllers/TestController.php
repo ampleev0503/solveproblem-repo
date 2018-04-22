@@ -14,7 +14,7 @@ class TestController extends Controller
 
     public function actionIndex()
     {
-        return $this->renderTemplate('test');
+        echo $this->renderTemplate('test');
     }
 
 }

@@ -1,5 +1,6 @@
 <?php
 
-require_once "../controllers/FrontController.php";
 
-(new \app\controllers\FrontController())->runAction();
+include "../base/App.php";
+\app\base\App::call()->run();
+

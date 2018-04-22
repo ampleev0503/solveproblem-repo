@@ -1,27 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: artem
- * Date: 07.04.2018
- * Time: 11:04
+ * User: Вадим
+ * Date: 10.01.2018
+ * Time: 17:52
  */
 
 namespace app\controllers;
 
-//контроллер ошибок
+
 class ErrorController extends Controller
 {
-    protected $layout = false;
 
-    public function actionIndex()
-    {
-      //заглушка
-          return false;
+    public function actionRequest() {
+        echo $this->render("error/request", ['message' => "Ошибка в запросе"]);
     }
 
-  //Страница не найдена
-    public function actionNotfound()
-    {
-        return $this->renderTemplate('error/notfound');
-    }
 }
