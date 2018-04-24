@@ -23,6 +23,18 @@
       "css": "user",
       "code": 59394,
       "src": "fontawesome"
+    },
+    {
+      "uid": "243424d56528e83e4fe9ef6e6347a2ef",
+      "css": "rouble",
+      "code": 61784,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "531bc468eecbb8867d822f1c11f1e039",
+      "css": "calendar",
+      "code": 59395,
+      "src": "fontawesome"
     }
   ]
 }

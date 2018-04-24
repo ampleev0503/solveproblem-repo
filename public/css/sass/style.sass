@@ -354,31 +354,38 @@ body
     color: $color-2
   &:active
     color: $color-1
-.registration-block, .authorization-block
-  h1
-    margin-top: 22px
-    font-size: 57.8px
-    font-weight: normal
-    font-style: normal
-    font-stretch: normal
-    text-align: center
-    color: $color-dark-3
-    letter-spacing: 1.4px
+.h1
+  margin-top: 22px
+  font-size: 57.8px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
+  text-align: center
+  color: $color-dark-3
+  letter-spacing: 1.4px
 .form-block
   display: flex
   justify-content: flex-start
   max-width: 1515px
   margin: 0 auto
+.note
+  margin-bottom: 20px
+  font-size: 26px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
+  color: $color-label
+  letter-spacing: 0.6px
+.img-form
+  width: 315px
+  height: 455px
+  margin: 77px 30px 40px 19px
+  text-align: center
+  background-image: url("../img/form.jpg")
+.form-wrapper
+  max-width: 720px
+  margin: -37px 0 0 51px
 .registration-block
-  .img-form
-    width: 315px
-    height: 455px
-    margin: 77px 30px 40px 19px
-    text-align: center
-    background-image: url("../img/form.jpg")
-  .form-wrapper
-    max-width: 720px
-    margin: -37px 0 0 51px
   span
     font-size: 29.76px
     font-weight: 400
@@ -397,11 +404,6 @@ body
     border: 1px solid $color-dark-3
     border-radius: 10px
     outline: none
-  .note
-    color: $color-grey-2
-    font-size: 26px
-    letter-spacing: 0.6px
-    margin-bottom: 20px
   .form__left-block
     display: inline-block
     margin-right: 23px
@@ -446,7 +448,7 @@ body
     background-size: auto
     background-position: center 60%
   .terms-of-use
-    color: $color-grey-2
+    color: $color-label
     font-size: 27px
     font-weight: 400
     letter-spacing: 0.744px
@@ -469,14 +471,14 @@ body
 .authorization-block
   width: 720px
   margin: 0 auto
-  .authorization-input
-    width: 667px
-    margin-bottom: 45px
-    padding: 24px 26px
-    text-align: center
-    border-radius: 10px
-    border: 1px solid $color-dark-3
-    outline: none
+.authorization-input
+  width: 667px
+  margin-bottom: 45px
+  padding: 24px 26px
+  text-align: center
+  border-radius: 10px
+  border: 1px solid $color-dark-3
+  outline: none
 .lg__fr__btn
   display: flex
   justify-content: space-between
@@ -520,3 +522,253 @@ body
     color: $color-2
     &:hover
       color: $color-1
+
+// Страница "Создать задание"
+
+.create-an-assignment
+  width: 720px
+  margin: 0 auto
+  select
+    width: 344px
+    height: 64px
+    padding-left: 26px
+    color: $color-label
+    border-radius: 10px
+    border: 1px solid $color-dark-3
+    outline: none
+  .subcategory
+    margin-left: 26px
+  textarea
+    position: relative
+    width: 667px
+    height: 158px
+    margin-top: -14px
+    padding: 20px 26px 20px 26px
+    background-color: transparent
+    border-radius: 10px
+    border: 1px solid $color-dark-3
+    resize: none
+    outline: none
+    z-index: 1
+
+.short-description
+  width: 667px
+  height: 64px
+  margin-top: 45px
+  padding-left: 26px
+  padding-right: 26px
+  border-radius: 10px
+  border: 1px solid $color-dark-3
+  outline: none
+.sample-1
+  margin-left: 26px
+  margin-top: -10px
+  font-size: 19.4px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
+  line-height: 2.63
+  letter-spacing: 0.5px
+  color: $color-grey
+  span
+    font-weight: bold
+//.text-area-wrap
+//  position: relative
+//  background-color: white
+.placeholder-textarea
+  position: absolute
+  margin-top: -210px
+  width: 670px
+  line-height: 0.5
+  padding-left: 26px
+  padding-right: 26px
+  p
+    letter-spacing: 0.5px
+    color: $color-placeholder
+  p:nth-child(3), p:nth-child(5)
+    font-size: 19.4px
+    font-weight: normal
+    font-style: normal
+    font-stretch: normal
+    line-height: 1
+  p:nth-child(1)
+    font-size: 29.8px
+    font-style: italic
+  p:nth-child(3)
+    margin-top: 15px
+  p:nth-child(5)
+    margin-top: -5px
+.price
+  width: 95px
+  height: 64px
+  margin-top: 41px
+  padding-left: 110px
+  padding-right: 26px
+  border-radius: 10px
+  border: 1px solid $color-dark-3
+  outline: none
+.placeholder-price
+  p
+    margin-left: 26px
+    margin-top: -74px
+    position: absolute
+    font-size: 29.8px
+    font-weight: normal
+    font-style: normal
+    font-stretch: normal
+    line-height: 2.63
+    letter-spacing: 0.7px
+    color: $color-label
+.rouble
+  position: absolute
+  margin-top: -58px
+  margin-left: 230px
+  font-size: 45px
+  color: #cbcbcb
+.date
+  width: 144px
+  height: 64px
+  padding-left: 16px
+  font-size: 15.5px
+  letter-spacing: 0.5px
+  color: $color-label
+  border-radius: 10px
+  border: 1px solid $color-dark-3
+  outline: none
+.date__calendar
+  width: 385px
+  margin-top: -68px
+  margin-left: 340px
+  p:nth-child(1), p:nth-child(4)
+    position: absolute
+    font-size: 19.4px
+    font-weight: normal
+    font-style: normal
+    font-stretch: normal
+    line-height: 2.63
+    letter-spacing: 0.5px
+    color: $color-label
+  p:nth-child(1)
+    margin-top: -40px
+    margin-left: 58px
+  p:nth-child(4)
+    margin-top: -108px
+    margin-left: 245px
+._start
+  margin-left: 36px
+._finish
+  margin-left: 15px
+.icon-calendar-start
+  display: block
+  margin-top: -55px
+  margin-left: 146px
+.icon-calendar-finish
+  display: block
+  margin-top: -55px
+  margin-left: 328px
+.icon-calendar
+  position: absolute
+  font-size: 35px
+  color: $color-dark-3
+.download-photo
+  height: 148px
+  display: flex
+  justify-content: space-between
+  margin-top: 45px
+  margin-bottom: 45px
+.photo
+  width: 147px
+  height: 147px
+  border-radius: 10px
+  background-color: #cbcbcb
+  cursor: pointer
+  p
+    width: 120px
+    font-size: 16px
+    font-weight: normal
+    font-style: normal
+    font-stretch: normal
+    line-height: 0.94
+    letter-spacing: 0.4px
+    text-align: center
+    color: $color-light
+    display: block
+    margin: -5px auto
+.circle
+  width: 78px
+  height: 78px
+  margin: 10px auto
+  border: 1px solid $color-light
+  border-radius: 50%
+.plus
+  display: block
+  width: 40px
+  height: 40px
+  font-size: 3em
+  color: $color-light
+  margin: -10px 16px
+.registration__block
+  .first-name, .last-name
+    width: 293px
+  .last-name
+    margin-left: 20px
+  input
+    width: 667px
+    height: 64px
+    margin-bottom: 45px
+    padding-left: 26px
+    padding-right: 26px
+    border-radius: 10px
+    border: 1px solid $color-dark-3
+    outline: none
+  span
+    position: absolute
+    margin-left: 520px
+    margin-top: -35px
+    font-size: 18.2px
+    font-weight: normal
+    font-style: italic
+    font-stretch: normal
+    line-height: 2.63
+    letter-spacing: 0.5px
+    color: $color-grey-3
+    float: right
+    &:hover
+      cursor: pointer
+      color: $color-dark-3
+.publish
+  display: block
+  width: 339px
+  height: 78px
+  border-radius: 10px
+  border: solid 1px $color-2
+  background: transparent
+  font-size: 34.1px
+  letter-spacing: 0.9px
+  color: $color-2
+  outline: none
+  margin: 0 auto
+  &:hover
+    background: $color-2
+    color: white
+    transition: 0.5s
+  &:active
+    box-shadow: inset 0 1px 3px rgba(0,10,20,.5), 0 1px rgb(83,94,104), 0 0 1px rgb(86,96,106)
+.policy
+  font-size: 15.2px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
+  line-height: 1.33
+  letter-spacing: 0.4px
+  text-align: center
+  color: $color-grey-3
+  margin-bottom: 40px
+  a:nth-child(3)
+    text-decoration: underline
+    color: $color-dark-3
+  a:nth-child(5)
+    text-decoration: none
+    color: $color-1
+
+
