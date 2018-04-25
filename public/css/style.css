@@ -232,9 +232,9 @@ body {
     letter-spacing: 1.8px; }
   .services .services__wrapper {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
-    width: 960px;
+    width: 1100px;
     margin: 0 auto 40px auto;
     color: #484848; }
     .services .services__wrapper .services__list {
@@ -265,7 +265,7 @@ body {
   font-size: 40px;
   color: #6acdb1;
   letter-spacing: 1px;
-  border: 3px solid #6acdb1;
+  border: 1px solid #6acdb1;
   border-radius: 10px;
   transition: 0.5s; }
   .link-btn:hover {
@@ -307,8 +307,8 @@ body {
 
 .footer__socials-logo-wrapper {
   display: flex;
-  justify-content: flex-start;
-  width: 979px;
+  justify-content: space-between;
+  width: 1000px;
   margin: 165px auto 0 auto; }
 
 .socials {
@@ -339,7 +339,6 @@ body {
 
 .footer__logo {
   display: block;
-  margin-left: 108px;
   font-family: "StreetscriptRedux", sans-serif;
   color: #fff;
   font-size: 40px;
@@ -348,6 +347,10 @@ body {
     color: #ffb084; }
   .footer__logo:active {
     color: #6acdb1; }
+
+.footer__item {
+  width: 254px;
+  height: 10px; }
 
 .copyright {
   width: 400px;
@@ -614,10 +617,10 @@ body {
 .placeholder-textarea {
   position: absolute;
   margin-top: -210px;
-  width: 670px;
-  line-height: 0.5;
   padding-left: 26px;
-  padding-right: 26px; }
+  padding-right: 26px;
+  width: 670px;
+  line-height: 0.5; }
   .placeholder-textarea p {
     letter-spacing: 0.5px;
     color: #ddd; }
