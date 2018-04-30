@@ -1,0 +1,34 @@
+.btn
+  padding: 18px 45px
+  font-size: 34.1px
+  letter-spacing: 0.9px
+  border-radius: 10px
+  transition: 0.5s
+  &:active
+    box-shadow: inset 0 1px 3px rgba(0,10,20,.5), 0 1px rgb(83,94,104), 0 0 1px rgb(86,96,106)
+  &--default
+    color: $color-2
+    border: 1px solid $color-2
+    &:hover
+      color: $color-light
+      background-color: $color-2
+      transition: 0.5s
+  &--error
+    color: $color-4
+    border: 1px solid $color-4
+    &:hover
+      color: $color-light
+      background-color: $color-4
+      transition: 0.5s
+  &--block
+    display: block
+  &--inline-block
+    display: inline-block
+  &--centered
+    margin: 48px auto 60px auto
+  &--submit
+    background-color: transparent
+  &--auth
+    width: 314px
+    padding: 18px 0
+    text-align: center

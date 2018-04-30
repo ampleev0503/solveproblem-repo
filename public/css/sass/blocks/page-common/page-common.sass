@@ -1,0 +1,39 @@
+.page-common
+  font-family: $font-regular
+  font-size: 26px
+  a
+    text-decoration: none
+  input
+    outline: none
+    &::-webkit-input-placeholder
+      color: $color-placeholder
+      font-style: italic
+      opacity: 1
+      transition: opacity 0.3s ease
+    &:focus::-webkit-input-placeholder
+      opacity: 0
+      transition: opacity 0.3s ease
+    &:-moz-placeholder
+      color: $color-placeholder
+      font-style: italic
+      opacity: 1
+      transition: opacity 0.3s ease
+    &:focus:-moz-placeholder
+      opacity: 0
+      transition: opacity 0.3s ease
+    &::-moz-placeholder
+      color: $color-placeholder
+      font-style: italic
+      opacity: 1
+      transition: opacity 0.3s ease
+    &:focus::-moz-placeholder
+      opacity: 0
+      transition: opacity 0.3s ease
+    &:-ms-input-placeholder
+      color: $color-placeholder
+      font-style: italic
+      opacity: 1
+      transition: opacity 0.3s ease
+    &:focus:-ms-input-placeholder
+      opacity: 0
+      transition: opacity 0.3s ease
