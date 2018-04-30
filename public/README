@@ -1,0 +1,32 @@
+Сборка html страниц
+--------------------------------------
+1. index.html
+
+    doctype-head.html
+    header-not-logged-index.html
+    index-main.html
+    footer.html
+
+2. registration.html
+
+    doctype-head.html
+    header-not-logged.html
+    bread-crumbs.html
+    registration.html
+    footer.html
+
+3. autorization.html
+
+    doctype-head.html
+    header-not-logged.html
+    bread-crumbs.html
+    autorization.html
+    footer.html
+
+4. application.html
+
+    doctype-head.html
+    header-not-logged.html
+    bread-crumbs.html
+    application.html
+    footer.html

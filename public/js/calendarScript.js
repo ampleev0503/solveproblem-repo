@@ -19,7 +19,7 @@ $(function() {
 		yearSuffix: "" };
 	$.datepicker.setDefaults( $.datepicker.regional.ru );
 
-	$( ".date" ).datepicker({
+	$( ".input--date" ).datepicker({
 		dateFormat: "dd.mm.yy",
 		changeYear: true,
 		minDate: new Date(2011, 6, 26),
