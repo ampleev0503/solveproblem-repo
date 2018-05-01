@@ -60,11 +60,14 @@
   justify-content: space-between;
   height: 102px; }
   .content__left {
+    width: 355px;
     margin-left: 4%; }
-  .content__center {
-    margin-left: -123px; }
   .content__right {
-    margin-right: 4%; }
+    display: flex;
+    justify-content: flex-end;
+    width: 355px;
+    margin-right: 4%;
+    text-align: right; }
   .content__nav, .content a {
     display: inline-block;
     color: #fff;
@@ -399,6 +402,9 @@
   text-align: center;
   color: #575757;
   letter-spacing: 1.4px; }
+  .title--orders {
+    letter-spacing: 4px;
+    margin-bottom: 47px; }
 
 .form-wrapper {
   max-width: 720px;
@@ -713,6 +719,7 @@
   margin: 0;
   width: 179px;
   height: 172px;
+  text-align: left;
   background-color: #fff;
   box-sizing: border-box;
   border: 1px solid #575757;
@@ -724,8 +731,7 @@
     font-size: 18px;
     font-weight: 400;
     letter-spacing: 0.9px;
-    line-height: 32px;
-    text-align: right; }
+    line-height: 32px; }
     .dropdown a:hover {
       color: #6acdb1; }
     .dropdown a:active {
@@ -737,7 +743,7 @@
       position: absolute;
       top: -50px;
       right: -10px;
-      width: 50px;
+      width: 80px;
       height: 50px;
       background-color: transparent; }
   .dropdown__item:hover a {
@@ -758,3 +764,35 @@
     display: block; }
   .dropdown--active a {
     color: #ffb084; }
+
+.orders-btn {
+  width: 350px;
+  height: 49px;
+  margin: 0 auto;
+  box-sizing: border-box; }
+  .orders-btn a {
+    display: inline-block;
+    margin: 0;
+    width: 174px;
+    height: 47px;
+    color: #575757;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    background-color: #fff; }
+    .orders-btn a:hover {
+      color: #fff;
+      background-color: #6acdb1; }
+  .orders-btn__left {
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #6acdb1;
+    border-right: none; }
+  .orders-btn__right {
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #6acdb1;
+    border-left: none; }
+  .orders-btn__active {
+    color: #fff;
+    background-color: #6acdb1; }
