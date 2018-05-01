@@ -1,0 +1,53 @@
+.dropdown
+  display: none
+  position: absolute
+  top: 79px
+  right: 60px
+  margin: 0
+  width: 179px
+  height: 172px
+  background-color: $color-light
+  box-sizing: border-box
+  border: 1px solid $color-dark-3
+  border-radius: 10px
+  padding: 10px 5px
+  list-style-type: none
+  a
+    color: $color-dark-3
+    font-size: 18px
+    font-weight: 400
+    letter-spacing: 0.9px
+    line-height: 32px
+    text-align: right
+    &:hover
+      color: $color-2
+    &:active
+      color: $color-1
+  &__item:nth-child(1)
+    margin-top: 8px
+    span
+      display: block
+      position: absolute
+      top: -50px
+      right: -10px
+      width: 50px
+      height: 50px
+      background-color: transparent
+  &__item:hover a
+    color: $color-2
+  &__item:active a
+    color: $color-1
+  &__item:hover i
+    color: $color-grey
+  &__item:active i
+    color: $color-1
+  &__icon
+    font-size: 21px
+    padding-left: 11px
+    padding-right: 3px
+    padding-top: 3px
+    color: $color-grey-2
+  &__visible
+    display: block
+  &--active a
+    color: $color-1
