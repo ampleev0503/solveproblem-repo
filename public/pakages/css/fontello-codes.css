@@ -3,4 +3,8 @@
 .icon-left-open-big:before { content: '\e801'; } /* '' */
 .icon-user:before { content: '\e802'; } /* '' */
 .icon-calendar:before { content: '\e803'; } /* '' */
+.icon-menu:before { content: '\e804'; } /* '' */
+.icon-cog-1:before { content: '\e805'; } /* '' */
+.icon-check:before { content: '\e806'; } /* '' */
+.icon-logout-1:before { content: '\e807'; } /* '' */
 .icon-rouble:before { content: '\f158'; } /* '' */

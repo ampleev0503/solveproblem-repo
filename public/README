@@ -15,12 +15,12 @@
     registration.html
     footer.html
 
-3. autorization.html
+3. authorization.html
 
     doctype-head.html
     header-not-logged.html
     bread-crumbs.html
-    autorization.html
+    authorization.html
     footer.html
 
 4. application.html
