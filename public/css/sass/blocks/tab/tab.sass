@@ -1,0 +1,21 @@
+.tab
+  display: inline-block
+  width: 319px
+  height: 48px
+  color: $color-dark-3
+  border-bottom: 1px solid $color-dark-3
+  border-right: 1px solid $color-dark-3
+  font-size: 18px
+  line-height: 48.32px
+  letter-spacing: 1.6px
+  text-align: center
+  box-sizing: border-box
+  cursor: pointer
+  &--last
+    border-right: none
+  &--active
+    color: $color-light
+    background-color: $color-dark-3
+  &:not(.tab--active):hover
+    color: $color-light
+    background-color: $color-dark-3
