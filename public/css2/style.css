@@ -378,8 +378,22 @@ body {
 
 .registration-block .form-wrapper {
   max-width: 720px;
-  margin: -37px 0 0 51px; }
-
+  margin: -37px 0 0 51px;
+}
+.registration-block .form-wrapper .answer{
+  text-align: center;
+  font-size: 29.76px;
+  font-weight: 400;
+  color: #9a9a9a;
+  letter-spacing: 0.744px;
+  margin-top: 18px;
+}
+.registration-block .form-wrapper .answer .timer{
+  text-align: center;
+  color: #9a9a9a;
+  font-size: 300px;
+  margin-top: 10px;
+}
 .registration-block span {
   font-size: 29.76px;
   font-weight: 400;
@@ -478,3 +492,27 @@ body {
   .registration-block .link-btn:hover {
     background-color: #6acdb1;
     outline: none; }
+
+
+  .loader{
+    display: none;
+    width: 100px;
+    height: 100px;
+    border: 12px solid #575757;
+    border-radius: 50%;
+    border-top-color: #ffb084;
+    position: fixed;
+    left: 50%;
+    margin-top: 119px;
+    transform: translate(-50%,-50%);
+    animation: 1s spin infinite linear;
+  }
+
+  @keyframes spin{
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to{
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }

@@ -15,6 +15,12 @@
 	width: 500px;
 	margin: 0 auto;
 }
+.authorization-error{
+	font-size: 30px;
+	display: none;
+	text-align: center;
+	color: #FF706D;
+}
 
 .lg__fr__btn {
 	display: flex;
