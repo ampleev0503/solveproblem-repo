@@ -5,7 +5,6 @@ namespace app\services;
 class Db
 {
     private $conn = null;
-
     private $config;
 
 
@@ -29,22 +28,22 @@ class Db
     //этот метод вызовется только тогда, когда в этом есть необходимость (есть какой-то запрос к бд, соответсвенно этот метод вызовется только в этот момент)
     private function getConnection()
     {
-        // проверка на то, установлено ли уже соединение с бд? Если не установлено, то устанавливаем. Если установлено, то возвращаем наше соединение
+
         if (is_null($this->conn)) {
             $this->conn = new \PDO(
-                $this->prepareDsnString(),
+               $this->prepareDsnString(),
                 $this->config['login'],
                 $this->config['password']
             );
-
             //устанавливаем соответсвующие аттрибуты для возврата данных из бд в виде ассоц массива
             //$this->conn->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
-            $this->conn->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
+//            $this->conn->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
 
             //устанавливаем режим ошибок, чтобы ошибки приходили в виде exception
-            //$this->conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $this->conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
         return $this->conn;
+
     }
 
     //здесь возвращаем dsn строчку для подключения к нашей бд (первый параметр при создании объекта PDO)
@@ -69,8 +68,9 @@ class Db
 //		echo "sql в методе query:<br>";
 //		var_dump($sql);
         //после execute еще не будет результата, но уже будет ОБЪЕКТ, который будет содержать данные о запросе
-        $PdoStatement->execute($params);
-        return $PdoStatement;
+
+      $PdoStatement->execute($params);
+      return $PdoStatement;
     }
 
     public function execute($sql, $params = []){
@@ -79,9 +79,10 @@ class Db
     }
 
     //метод, возвращающий одну строчку из таблицы
-    public function queryOne($sql, $params = [], $class = null)
+    public function queryOne($sql, $params = [])
     {
-        return $this->queryAll($sql, $params, $class)[0];
+      $smtp = $this->query($sql, $params);
+      return $smtp->fetch();
     }
 
     //метод, возвращающий набор строк из таблицы
@@ -104,11 +105,12 @@ class Db
         }
         return $smtp->fetchAll();
     }
+  public function queryObject($sql, $params, $class)
+  {
+    $smtp = $this->query($sql, $params);
+    $smtp->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, $class);
+    return $smtp->fetch();
+  }
 
 
-//    public function queryObject($sql, $params, $class) {
-//        $smtp = $this->query($sql, $params);
-//        $smtp->setFetchMode(\PDO::FETCH_CLASS | \PDO::FETCH_PROPS_LATE, $class);
-//        return $smtp->fetch();
-//    }
 }

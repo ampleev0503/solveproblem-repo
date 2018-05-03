@@ -9,7 +9,15 @@
 namespace app\services;
 
 
-class SendMail
+class SendMail extends SendMailgun
 {
+  private $subject;
+  private $text;
 
+  public function accountActive($email,$firstName,$url)
+  {
+    $this->subject = 'Подтверждение регистрации';
+    $this->text = include '../templates/mail/activeaccount.php';
+    $this->send($email,$firstName,$this->subject,$this->text);
+  }
 }
