@@ -1,6 +1,5 @@
 .tab
   display: inline-block
-  width: 319px
   height: 48px
   color: $color-dark-3
   border-bottom: 1px solid $color-dark-3
@@ -11,11 +10,21 @@
   text-align: center
   box-sizing: border-box
   cursor: pointer
+  &--performer
+    width: 319px
+  &--customer
+    width: 239px
   &--last
     border-right: none
-  &--active
+  &--performer-active
     color: $color-light
     background-color: $color-dark-3
+    transition: 0.5s
+  &--customer-active
+    color: $color-light
+    background-color: $color-dark-3
+    transition: 0.5s
   &:not(.tab--active):hover
     color: $color-light
     background-color: $color-dark-3
+    transition: 0.5s

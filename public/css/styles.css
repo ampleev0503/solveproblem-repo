@@ -770,8 +770,9 @@
   width: 350px;
   height: 49px;
   margin: 0 auto;
-  box-sizing: border-box; }
-  .orders-btn a {
+  box-sizing: border-box;
+  cursor: pointer; }
+  .orders-btn__item {
     display: inline-block;
     margin: 0;
     width: 174px;
@@ -783,9 +784,10 @@
     letter-spacing: 1.4px;
     text-align: center;
     background-color: #fff; }
-    .orders-btn a:hover {
+    .orders-btn__item:hover {
       color: #fff;
-      background-color: #6acdb1; }
+      background-color: #6acdb1;
+      transition: 0.5s; }
   .orders-btn__left {
     border-radius: 10px 0 0 10px;
     border: 1px solid #6acdb1;
@@ -799,15 +801,17 @@
     background-color: #6acdb1; }
 
 .tab-block-container {
-  width: 958px;
+  display: none;
+  width: 957px;
   margin: 61px auto 30px auto;
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid #575757; }
+  .tab-block-container--active {
+    display: block; }
 
 .tab {
   display: inline-block;
-  width: 319px;
   height: 48px;
   color: #575757;
   border-bottom: 1px solid #575757;
@@ -818,16 +822,27 @@
   text-align: center;
   box-sizing: border-box;
   cursor: pointer; }
+  .tab--performer {
+    width: 319px; }
+  .tab--customer {
+    width: 239px; }
   .tab--last {
     border-right: none; }
-  .tab--active {
+  .tab--performer-active {
     color: #fff;
-    background-color: #575757; }
+    background-color: #575757;
+    transition: 0.5s; }
+  .tab--customer-active {
+    color: #fff;
+    background-color: #575757;
+    transition: 0.5s; }
   .tab:not(.tab--active):hover {
     color: #fff;
-    background-color: #575757; }
+    background-color: #575757;
+    transition: 0.5s; }
 
 .tab-section {
+  display: none;
   padding: 10px; }
   .tab-section__content {
     margin: 7px 0 0 0;
@@ -843,3 +858,7 @@
     line-height: 48.32px;
     letter-spacing: 1.6px;
     text-align: center; }
+  .tab-section--performer-active {
+    display: block; }
+  .tab-section--customer-active {
+    display: block; }
