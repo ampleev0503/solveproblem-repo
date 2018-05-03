@@ -16,4 +16,9 @@ class ErrorController extends Controller
         echo $this->render("error/request", ['message' => "Ошибка в запросе"]);
     }
 
+  public function actionnotFound(){
+
+    echo $this->render("error/notfound");
+    }
+
 }

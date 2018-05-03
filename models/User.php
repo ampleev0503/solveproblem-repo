@@ -8,7 +8,7 @@
 
 namespace app\models;
 
-
+use app\models\repositories\UserRepository;
 class User extends DataEntity
 {
     public $id;
@@ -16,38 +16,28 @@ class User extends DataEntity
     public $lastName;
     public $email;
     public $telephone;
-    public $hashPass;
+    public $password;
+    public $isregist;
+    public $cityId;
+    public $rating;
 
+    private $role;
 
-    public function __construct($email = null, $firstName = null, $lastName = null, $telephone = null, $hashPass = null, $id = null)
+    public function __construct($email = null, $firstName = null, $lastName = null, $telephone = null, $password = null, $id = null, $isregist = 0)
     {
         $this->id;
         $this->email = $email;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->telephone = $telephone;
-        $this->hashPass = $hashPass;
+        $this->password = $password;
+        $this->isregist = $isregist;
     }
 
-    public static function auth($userId) {
-        $_SESSION['user'] = $userId;
+   public function getRole()
+    {
+        return $this->role;
     }
 
-    public static function checkLogged() {
-        //Если есть сессия, то возвращаем id пользователя
-        if (isset($_SESSION['user'])) {
-            return $_SESSION['user'];
-        }
-
-        // Если сессии не будет, то перенаправляем на авторизацию
-        header('Location: /user/login');
-    }
-
-    public static function isGuest() {
-        if (isset($_SESSION['user'])) {
-            return false;
-        }
-        return true;
-    }
 
 }

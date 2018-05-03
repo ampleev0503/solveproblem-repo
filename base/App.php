@@ -40,7 +40,7 @@ class App
         $this->config = include "../config/main.php";
         $this->autoloadRegister();
         $this->components = new Storage();
-        $this->mainController->runAction();
+        $this->mainController->runController();
 
     }
 

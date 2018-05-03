@@ -6,42 +6,44 @@
  * Time: 9:53
  */
 
-namespace app\services;
+namespace app\models;
 
 //Генератор ссылок
+use app\models\repositories\GenerateUrlRepository;
+
 class GenerateUrl
 {
   private $url;
-  private $pathDomain = '192.168.0.103';
+  private $pathDomain = 'https://solveproblem.ru';
   private $pathController = '/account';
   private $pathAction;
-  private $login;
   private $hashLoginPath; //будет индивидуальный путь для подтверждения регистрации
+  private $login;
 
 
   public function __construct($login)
   {
     $this->login = $login;
-    $this->hashLoginPath = $this->ganarate($login);
+    $this->hashLoginPath = $this->generate($login);
   }
 
   public function activeRegist()
   {
-    $this->pathAction = '/active/';
-    $this->pathDomain .= $this->pathController;
-    $this->pathDomain .= $this->pathAction;
-    $this->pathDomain .= $this->login;
-    $this->pathDomain .= '/'.$this->hashLoginPath;
-    $this->url = $this->pathDomain;
-
+    if((new GenerateUrlRepository())->insertPath($this->login,$this->hashLoginPath)){
+      $this->pathAction = '/active';
+      $this->pathDomain .= $this->pathController;
+      $this->pathDomain .= $this->pathAction;
+      $this->pathDomain .= '?login='.$this->login;
+      $this->pathDomain .= '&path=' . $this->hashLoginPath;
+      $this->url = $this->pathDomain;
+    }
     return $this->url;
   }
 
 
-  public function ganarate($login)
+  private function generate($login)
   {
     $result = md5($login);
-    //Сделать отправку в базу даных
     return $result;
   }
 }

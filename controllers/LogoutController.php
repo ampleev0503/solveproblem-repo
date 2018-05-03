@@ -8,8 +8,16 @@
 
 namespace app\controllers;
 
+use app\models\Authorization;
 
-class LogoutController
+class LogoutController extends Controller
 {
-
+  public function actionIndex()
+  {
+    $checkUser = Authorization::authUser();
+    if ($checkUser) {
+      Authorization::logout();
+    }
+    header("Location: /");
+  }
 }

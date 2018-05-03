@@ -1,7 +1,2 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: artem
- * Date: 02.05.2018
- * Time: 12:03
- */
+
+<h1>Подтверждение прошло успешно</h1>

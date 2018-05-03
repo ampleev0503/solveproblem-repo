@@ -9,7 +9,27 @@
 namespace app\controllers;
 
 
-class Account
+use app\models\Authorization;
+
+class AccountController extends Controller
 {
+  // Активация аккаунта
+  public function actionActive()
+  {
+      $login = trim($_GET['login']);
+      $path = trim($_GET['path']);
+
+      if (Authorization::activeAccount($login, $path)) {
+        echo $this->render('user/active');
+      }else{
+        header('location: /');
+      }
+  }
+
+  // Востановление пароля
+  public function actionForget()
+  {
+    return '#';
+  }
 
 }

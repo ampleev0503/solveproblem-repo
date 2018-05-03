@@ -43,13 +43,13 @@ Auth.prototype.sendForm = function (ev) {
 
 Auth.prototype.tellError = function (data) {
 	if (data === 'active'){
-		this.errorMessage = '*Необходимо пройти на почту для подтверждения аккаунта';
+		this.errorMessage = '* Необходимо пройти на почту для подтверждения аккаунта';
 	}
 	if (data === 'pass'){
-		this.errorMessage = '*Неправильные данные для входа на сайт';
+		this.errorMessage = '* Неверный логин или пароль';
 	}
 	if (data === 'notregist'){
-		this.errorMessage = '*Такого пользователя не существует';
+		this.errorMessage = '* Такого пользователя не существует';
 	}
 	this.error.style.display = 'block';
 	this.error.innerHTML = this.errorMessage;
