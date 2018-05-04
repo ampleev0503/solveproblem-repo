@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Сервис по предоставлению услуг">
+  <title>Solve Problem</title>
+  <link href='//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="pakages/css/fontello.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page-common">
+<div class="container">
+  <header class="header header--color">
+    <div class="content">
+      <div class="content__left">
+        <a href="application.html">+&nbsp;Создать&nbsp;задание</a>
+        <nav class="content__nav"><i class="icon-down-open-big"></i>Услуги</nav>
+      </div>
+      <div class="content__center">
+        <a href="index.html" class="logo logo--header">#Solve&nbsp;Problem</a>
+      </div>
+
+      <div class="content__right">
+        <div class="dropdown-toggle">
+          <div class="dropdown-toggle__icon-menu">
+            <div class="dropdown-toggle__line"></div>
+          </div>
+          <div class="dropdown-toggle__notifications"></div>
+        </div>
+
+
+        <ul class="dropdown">
+          <li class="dropdown__item">
+            <span></span>
+            <a href="index.html" class="dropdown__link">
+              <i class="dropdown__icon icon-user"></i>
+              Профиль
+            </a>
+          </li>
+          <li class="dropdown__item  dropdown--active">
+            <a href="#" class="dropdown__link">
+              <i class="dropdown__icon icon-check"></i>
+              Мои заказы
+            </a>
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">
+              <i class="dropdown__icon icon-cog-1"></i>
+              Настройки
+            </a>
+          </li>
+          <li class="dropdown__item">
+            <a href="#" class="dropdown__link">
+              <i class="dropdown__icon icon-logout-1"></i>
+              Выйти
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </header>
+  <div class="bread-crumbs">
+    <a href="index.html" class="bread-crumbs__link"><i class="icon-left-open-big"></i>На&nbsp;главную</a>
+  </div>
+  <!--Мои заказы-->
+
+  <div class="orders-block">
+
+    <h1 class="title title--orders">Мои заказы</h1>
+
+    <div class="orders-btn">
+      <div class="orders-btn__left orders-btn__item orders-btn__active">Я исполнитель</div><!--
+      --><div class="orders-btn__right orders-btn__item">Я заказчик</div>
+    </div>
+
+    <!--Блок исполнителя-->
+
+    <div class="tab-block-container tab-block-container--active performer"><!--
+      --><div class="tab tab--performer tab--performer-active">Мои отклики</div><!--
+      --><div class="tab tab--performer">В исполнении</div><!--
+      --><div class="tab tab--performer tab--last">Выполненные</div><!--
+      --><div class="tab-section tab-section--performer tab-section--performer-active">
+
+      <section class="subsection">
+
+        <div class="subsection__left">
+          <h2 class="subsection__title">Убрать 3-х квартиру</h2>
+          <img src="img/avatar1.jpg" alt="avatar" class="subsection__avatar">
+          <p class="subsection__fname">
+            Дмитрий
+            <span class="subsection__sname">Б.</span>
+          </p>
+          <p class="subsection__review">
+            Отзывы:
+            <i class="icon-thumbs-up-alt"></i>
+            <span class="subsection__like">5</span>
+            <i class="icon-thumbs-down-alt"></i>
+            <span class="subsection__dislike">1</span>
+          </p>
+        </div>
+
+        <div class="subsection__right">
+          <p class="subsection__price">
+            3500
+            <i class="icon-rouble subsection__icon-rouble"></i></p>
+          <p class="subsection__date">
+            <i class="icon-clock"></i>
+            До 23 июня 2018
+          </p>
+          <p class="subsection__location">
+            <i class="icon-location"></i>
+            Москва
+          </p>
+        </div>
+
+      </section>
+
+      <!--Сообщение показывается, если еще нет откликов-->
+      <section class="tab-section__subsection">
+        <p class="tab-section__content">
+          Вы еще не сделали ни одного предложения
+        </p>
+        <a href="#" class="tab-section__note">
+          Перейти к заданиям
+        </a>
+      </section>
+      <!--Сообщение показывается, если еще нет откликов END-->
+      
+      </div>
+
+      <div class="tab-section tab-section--performer">
+
+        <section class="subsection">
+
+          <div class="subsection__left">
+            <h2 class="subsection__title">Убрать 3-х квартиру</h2>
+            <img src="img/avatar1.jpg" alt="avatar" class="subsection__avatar">
+            <p class="subsection__fname">
+              Дмитрий
+              <span class="subsection__sname">Б.</span>
+            </p>
+            <p class="subsection__review">
+              Отзывы:
+              <i class="icon-thumbs-up-alt"></i>
+              <span class="subsection__like">5</span>
+              <i class="icon-thumbs-down-alt"></i>
+              <span class="subsection__dislike">1</span>
+            </p>
+          </div>
+
+          <div class="subsection__right">
+            <p class="subsection__price">
+              3500
+              <i class="icon-rouble subsection__icon-rouble"></i></p>
+            <p class="subsection__date">
+              <i class="icon-clock"></i>
+              До 23 июня 2018
+            </p>
+            <p class="subsection__location">
+              <i class="icon-location"></i>
+              Москва
+            </p>
+          </div>
+
+        </section>
+
+        <!--Сообщение показывается, если нет задач в исполнении-->
+        <section class="tab-section__subsection">
+          <p class="tab-section__content">
+            Вы еще не были назначены исполнителем
+          </p>
+          <img src="img/face.svg" alt="face" class="tab-section__face">
+        </section>
+        <!--Сообщение показывается, если нет задач в исполнении END-->
+
+      </div>
+
+      <div class="tab-section tab-section--performer">
+
+        <section class="subsection">
+
+          <div class="subsection__left">
+            <h2 class="subsection__title">Убрать 3-х квартиру</h2>
+            <img src="img/avatar1.jpg" alt="avatar" class="subsection__avatar">
+            <p class="subsection__fname">
+              Дмитрий
+              <span class="subsection__sname">Б.</span>
+            </p>
+            <p class="subsection__review">
+              Отзывы:
+              <i class="icon-thumbs-up-alt"></i>
+              <span class="subsection__like">5</span>
+              <i class="icon-thumbs-down-alt"></i>
+              <span class="subsection__dislike">1</span>
+            </p>
+          </div>
+
+          <div class="subsection__right">
+            <p class="subsection__price">
+              3500
+              <i class="icon-rouble subsection__icon-rouble"></i></p>
+            <p class="subsection__date">
+              <i class="icon-clock"></i>
+              До 23 июня 2018
+            </p>
+            <p class="subsection__location">
+              <span class="subsection__expect-response">Ожидается отзыв</span>
+              <i class="icon-location"></i>
+              Москва
+            </p>
+          </div>
+
+        </section>
+
+        <!--Сообщение показывается, если еще нет выполненных задач-->
+        <section class="tab-section__subsection">
+          <p class="tab-section__content">
+            У вас еще нет выполненных задач
+          </p>
+          <img src="img/face.svg" alt="face" class="tab-section__face">
+        </section>
+        <!--Сообщение показывается, если еще нет выполненных задач END-->
+
+      </div>
+
+    </div>
+
+    <!--Блок исполнителя END-->
+
+    <!--Блок заказчика-->
+
+    <div class="tab-block-container customer"><!--
+      --><div class="tab tab--customer tab--customer-active">Мои задачи</div><!--
+      --><div class="tab tab--customer">Предложения</div><!--
+      --><div class="tab tab--customer">В процессе</div><!--
+      --><div class="tab tab--customer tab--last">Завершенные</div><!--
+      --><div class="tab-section tab-section--customer tab-section--customer-active">
+        <p class="tab-section__content">
+          customer section 1
+        </p>
+        <p class="tab-section__note">
+          Перейти к заданиям
+        </p>
+    </div>
+      <div class="tab-section tab-section--customer">
+        <p class="tab-section__content">
+          customer section 2
+        </p>
+        <p class="tab-section__note">
+          Перейти к заданиям
+        </p>
+      </div>
+      <div class="tab-section tab-section--customer">
+        <p class="tab-section__content">
+          customer section 3
+        </p>
+        <p class="tab-section__note">
+          Перейти к заданиям
+        </p>
+      </div>
+      <div class="tab-section tab-section--customer">
+        <p class="tab-section__content">
+          customer section 4
+        </p>
+        <p class="tab-section__note">
+          Перейти к заданиям
+        </p>
+      </div>
+    </div>
+
+    <!--Блок заказчика END-->
+
+
+  </div>  <!--orders-block end-->
+</div>  <!--container end-->
+<!--Мои заказы end-->
+  <footer class="footer">
+    <div class="footer__content">
+      <section class="footer__block">
+        <h3>Услуги</h3>
+        <a href="#" class="footer__link">Техника</a>
+        <a href="#" class="footer__link">Услуги для дома</a>
+        <a href="#" class="footer__link">Транспорт</a>
+        <a href="#" class="footer__link">Свободное время</a>
+        <a href="#" class="footer__link">Учеба</a>
+        <a href="#" class="footer__link">Красота и здоровье</a>
+        <a href="#" class="footer__link">Все услуги: 777</a>
+      </section>
+      <section class="footer__block">
+        <h3>Города</h3>
+        <a href="#" class="footer__link">Москва</a>
+        <a href="#" class="footer__link">Санкт-Петербург</a>
+        <a href="#" class="footer__link">Калининград</a>
+        <a href="#" class="footer__link">Симферополь</a>
+        <a href="#" class="footer__link">Одесса</a>
+        <a href="#" class="footer__link">Новосибирск</a>
+        <a href="#" class="footer__link">Всего городов: 777</a>
+      </section>
+      <section class="footer__block">
+        <h3>Поддержка</h3>
+        <a href="#" class="footer__link">Популярные вопросы</a>
+        <a href="#" class="footer__link">Задать вопрос</a>
+      </section>
+      <section class="footer__block">
+        <h3>Контакты</h3>
+        <p>+7-000-000-00-00</p>
+        <p>+7-000-000-00-00</p>
+        <p>solveproblem@sp.com</p>
+      </section>
+    </div>
+    <div class="footer__social-logo-wrapper">
+      <div class="social">
+        <a href="#" class="social__item social__fb"></a>
+        <a href="#" class="social__item social__twit"></a>
+        <a href="#" class="social__item social__vk"></a>
+        <a href="#" class="social__item social__g-plus"></a>
+        <a href="#" class="social__item social__smile"></a>
+      </div>
+      <a href="index.html" class="logo logo--footer">#Solve&nbsp;Problem</a>
+    </div>
+    <div class="footer__copyright">Copyright&nbsp;2018&nbsp;www.solveproblem.ru</div>
+  </footer>
+  <script src="js/effects.js"></script>
+  <script src="js/dropdown.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/textarea_placeholder.js"></script>
+  <script src="js/tab-block-container.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="js/calendarScript.js"></script>
+</body>
+</html>

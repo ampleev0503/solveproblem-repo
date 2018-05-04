@@ -7,4 +7,8 @@
 .icon-cog-1:before { content: '\e805'; } /* '' */
 .icon-check:before { content: '\e806'; } /* '' */
 .icon-logout-1:before { content: '\e807'; } /* '' */
+.icon-clock:before { content: '\e808'; } /* '' */
+.icon-location:before { content: '\e809'; } /* '' */
 .icon-rouble:before { content: '\f158'; } /* '' */
+.icon-thumbs-up-alt:before { content: '\f164'; } /* '' */
+.icon-thumbs-down-alt:before { content: '\f165'; } /* '' */
