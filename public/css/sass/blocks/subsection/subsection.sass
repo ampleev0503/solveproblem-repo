@@ -1,36 +1,50 @@
 .subsection
   display: flex
   justify-content: space-between
+  margin-bottom: 11px
   padding: 0 33px
   font-size: 18.41px
   color: $color-dark-3
   border-bottom: 1px solid $color-dark-3
+  &--accordion
+    display: block
   &__left
     text-align: left
   &__right
     text-align: right
   &__title
+    max-width: 634px
     font-size: 33px
     line-height: 40px
     letter-spacing: 2.3px
     font-weight: 400
     margin: 10px 0 15px 0
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+  &__title--accordion
+    display: inline-block
   &__avatar
     width: 76px
     height: 76px
     float: left
     margin-bottom: 32px
-  &__fname
+    &--accordion
+      margin-left: 54px
+  &__avatar-right
+    display: block
+    margin: 14px 0 0 95px
+    width: 76px
+    height: 76px
+  &__wrap
     display: inline-block
-    float: left
+  &__fname
     margin-top: 10px
     margin-left: 16px
     color: $color-7
     letter-spacing: 1.3px
   &__review
-    display: inline-block
-    float: left
-    margin: 53px 0 0 -104px
+    margin: 21px 0 0 16px
     letter-spacing: 1.4px
   &__price
     display: inline-block
@@ -44,6 +58,48 @@
     line-height: 40px
     text-align: right
     border-radius: 5px
+  &__btn-select
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 172px
+    height: 43px
+    margin: 12px 0 3px 0
+    background-color: $color-2
+    color: $color-light
+    font-size: 15px
+    letter-spacing: 2px
+    text-align: center
+    border-radius: 5px
+    &:hover
+      background-color: $color-8
+    &:active
+      box-shadow: inset 0 1px 3px rgba(0,10,20,.5), 0 1px rgb(83,94,104), 0 0 1px rgb(86,96,106)
+    &--active
+      background-color: $color-8
+    &--top
+      color: $color-dark-3
+      background-color: $color-light
+      border: 1px solid $color-9
+      &:hover
+        color: $color-light
+        background-color: $color-9
+        border: 1px solid $color-9
+    &--bottom
+      color: $color-dark-3
+      background-color: $color-light
+      border: 1px solid $color-8
+      &:hover
+        color: $color-light
+        background-color: $color-8
+        border: 1px solid $color-8
+  &__note
+    width: 117px
+    margin: 3px auto
+    color: $color-grey-5
+    font-size: 12px
+    letter-spacing: 1px
+    text-align: center
   &__icon-rouble
     margin: 0 0 0 10px
   &__date
@@ -55,6 +111,60 @@
   &__expect-response
     padding-right: 10px
     color: $color-2
+  &__header
+    display: flex
+    justify-content: space-between
+    margin-top: 11px
+    width: 100%
+    cursor: pointer
+    .subsection__left
+      margin-left: -40px
+    .subsection__price
+      margin-bottom: 23px
+  &__content
+    height: 0
+    overflow: hidden
+    -moz-transition: height 0.3s ease-in-out
+    -webkit-transition: height 0.3s ease-in-out
+    -o-transition: height 0.3s ease-in-out
+    transition: height 0.3s ease-in-out
+  .subsection__content--visible
+    height: auto
+    margin-left: 16px
+    margin-bottom: 29px
+    font-size: 24px
+    line-height: 24px
+    letter-spacing: 1.9px
+    word-spacing: -0.9px
+  &__content-left
+    display: inline-block
+    width: 650px
+  &__content-right
+    display: inline-block
+    width: 198px
+    text-align: right
+    vertical-align: top
+  &__offers
+    margin: -27px 0 0 0
+    color: $color-grey-4
+    font-size: 13px
+    font-weight: 400
+    line-height: 35.03px
+    letter-spacing: 1.2px
+    p
+      display: inline-block
+      margin: 0 0 0 56px
+    span
+      display: inline-block
+      color: $color-6
+  &__edit
+    display: inline-block
+    position: relative
+  &__description
+    margin: 7px 0 0 0
+    max-width: 634px
+  &__finish-date
+    margin: -19px 0 20px 0
   .icon-clock
     padding-right: 5px
     font-size: 20px
@@ -68,3 +178,63 @@
     padding-right: 5px
     font-size: 24px
     color: $color-4
+  .icon-eye
+    font-size: 18px
+  .icon-pencil
+    position: absolute
+    top: -43px
+    left: 15px
+    font-size: 21px
+    color: $color-grey-2
+  &__address
+    margin: 19px 0 27px -6px
+    .icon-location
+      padding-right: 0
+  &__img-container
+    max-width: 534px
+  &__img
+    margin-right: 8px
+    width: 89px
+    height: 89px
+  &__phone
+    margin: 13px 0 -3px 0
+    font-weight: bold
+  &__finish
+    display: inline-block
+    width: 39px
+    height: 34px
+    margin: 16px 48px 0 0
+  &__performer
+    margin: 11px auto
+    font-size: 18px
+    color: $color-1
+    line-height: 18px
+    letter-spacing: 2px
+  &__performer-name
+    margin: 0 auto
+    font-size: 18px
+    color: $color-7
+    line-height: 18px
+    letter-spacing: 1.8px
+  &__performer-review
+    margin: 9px auto
+    font-size: 18px
+    color: $color-grey-5
+    line-height: 18px
+    letter-spacing: 1.8px
+  &__write-review
+    font-size: 23px
+    line-height: 80px
+    color: $color-10
+    letter-spacing: 1.6px
+    &:before
+      content: ""
+      display: inline-block
+      margin: 0 15px -14px -50px
+      white-space: nowrap
+      width: 50px
+      height: 46px
+      background-image: url("../img/note.png")
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center 100%
