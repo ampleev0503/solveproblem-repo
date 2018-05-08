@@ -30,3 +30,19 @@
     bread-crumbs.html
     application.html
     footer.html
+
+5. personal-area.html
+
+    doctype-head.html
+    header-logged.html
+    bread-crumbs.html
+    personal-area.html
+    footer.html
+
+6. password-recovery.html
+
+    doctype-head.html
+    header-not-logged.html
+    bread-crumbs.html
+    password-recovery.html
+    footer.html
