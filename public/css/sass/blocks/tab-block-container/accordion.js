@@ -1,5 +1,5 @@
 function accordion() {
-    let subsectionHeader = document.querySelectorAll('.subsection__header');
+    let subsectionHeader = document.querySelectorAll('.subsection__header  .subsection__left');
     let subsectionContent = document.querySelectorAll('.subsection__content');
     let arrow = document.querySelectorAll('.icon-down-open-mini');
     console.log(arrow[1]);
