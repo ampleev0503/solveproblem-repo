@@ -289,6 +289,7 @@
 .btn {
   padding: 18px 45px;
   font-size: 34.1px;
+  font-family: "MyriadProRegular", sans-serif;
   letter-spacing: 0.9px;
   border-radius: 10px;
   transition: 0.5s; }
@@ -696,7 +697,8 @@
   letter-spacing: 0.4px;
   text-align: center;
   color: #bdbdbd;
-  margin-bottom: 40px; }
+  margin-bottom: 40px;
+  margin-top: -50px; }
   .policy a:nth-child(3) {
     text-decoration: underline;
     color: #575757; }
