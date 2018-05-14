@@ -329,6 +329,8 @@
     margin: 56px auto 58px auto;
     padding: 18px 59px;
     letter-spacing: 0.5px; }
+  .btn--task {
+    margin: 24px auto 40px auto; }
 
 .footer {
   color: #fff;
@@ -395,7 +397,7 @@
 
 .bread-crumbs__link {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 26px;
   padding-left: 4%;
   font-size: 24px;
   color: #575757;
@@ -926,17 +928,15 @@
   .subsection__title--accordion {
     display: inline-block; }
   .subsection__avatar {
-    width: 76px;
-    height: 76px;
+    margin-bottom: 32px;
     float: left;
-    margin-bottom: 32px; }
+    width: 76px;
+    height: 76px; }
     .subsection__avatar--accordion {
       margin-left: 54px; }
   .subsection__avatar-right {
     display: block;
-    margin: 14px 0 0 95px;
-    width: 76px;
-    height: 76px; }
+    margin: 14px 0 0 95px; }
   .subsection__wrap {
     display: inline-block; }
   .subsection__fname {
@@ -947,18 +947,6 @@
   .subsection__review {
     margin: 21px 0 0 16px;
     letter-spacing: 1.4px; }
-  .subsection__price {
-    display: inline-block;
-    margin: 12px 0 25px 0;
-    padding: 0 4px 0 47px;
-    background-color: #fdc9ac;
-    color: #fff;
-    font-size: 26.66px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    line-height: 40px;
-    text-align: right;
-    border-radius: 5px; }
   .subsection__btn-select {
     display: flex;
     align-items: center;
@@ -1019,7 +1007,7 @@
     width: 100%; }
     .subsection__header .subsection__left {
       margin-left: -40px; }
-    .subsection__header .subsection__price {
+    .subsection__header .price {
       margin-bottom: 23px; }
   .subsection__content {
     height: 0;
@@ -1068,12 +1056,6 @@
   .subsection .icon-clock {
     padding-right: 5px;
     font-size: 20px; }
-  .subsection .icon-thumbs-up-alt {
-    font-size: 20px;
-    color: #fdc9ac; }
-  .subsection .icon-thumbs-down-alt {
-    font-size: 20px;
-    color: #fdc9ac; }
   .subsection .icon-location {
     padding-right: 5px;
     font-size: 24px;
@@ -1139,6 +1121,34 @@
       background-size: cover;
       background-position: center 100%; }
 
+.icon-thumbs-up-alt {
+  font-size: 20px;
+  color: #fdc9ac; }
+
+.icon-thumbs-down-alt {
+  font-size: 20px;
+  color: #ff6c65; }
+
+.icon-down-open-mini {
+  display: inline-block; }
+
+.price {
+  display: inline-block;
+  padding: 0 4px 0 47px;
+  background-color: #fdc9ac;
+  color: #fff;
+  font-size: 26.66px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 40px;
+  text-align: right;
+  border-radius: 5px;
+  white-space: nowrap; }
+  .price--subsection {
+    margin: 12px 0 25px 0; }
+  .price--task {
+    margin-top: 10px; }
+
 .info {
   margin: -20px 0 303px 0;
   font-size: 24px;
@@ -1153,3 +1163,160 @@
     font-size: 24px;
     line-height: 50px;
     letter-spacing: 0.39px; }
+
+.task-page-block {
+  display: flex;
+  justify-content: center; }
+
+.task {
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+  margin: 53px auto; }
+  .task__left {
+    max-width: 740px; }
+  .task__right {
+    width: auto;
+    padding-left: 30px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #575757;
+    letter-spacing: 1.7px;
+    word-spacing: -1px; }
+    .task__right p {
+      margin: 0; }
+      .task__right p:first-child {
+        margin-top: 16px; }
+  .task__title-price-wrapper {
+    display: flex;
+    justify-content: space-between; }
+  .task__title {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 52px;
+    color: #575757;
+    letter-spacing: 4.1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .task__title--offer {
+    display: block;
+    margin: 12px 0;
+    font-size: 36px;
+    letter-spacing: 1.8px; }
+  .task__info {
+    margin-top: 8px;
+    font-size: 18px;
+    color: #9b9b9b;
+    letter-spacing: 1.6px; }
+    .task__info span {
+      margin-right: 10px;
+      padding-right: 3px;
+      line-height: 29px; }
+  .task__open {
+    color: #6acdb1;
+    border-right: 1px solid #cbcbcb; }
+  .task__close {
+    color: #fa3043;
+    border-right: 1px solid #cbcbcb; }
+  .task__views {
+    border-right: 1px solid #cbcbcb; }
+  .task__category {
+    margin: 0;
+    font-size: 18px;
+    color: #9b9b9b;
+    letter-spacing: 1.6px;
+    line-height: 29px; }
+  .task__avatar {
+    width: 120px;
+    height: 120px;
+    margin-top: 14px;
+    margin-right: 11px; }
+    .task__avatar--offer {
+      width: 85px;
+      height: 85px;
+      margin-right: 3px; }
+  .task__wrap {
+    display: inline-block;
+    margin-top: 13px;
+    vertical-align: top;
+    letter-spacing: 1px; }
+    .task__wrap--offer {
+      font-size: 13px;
+      line-height: 19px;
+      color: #9b9b9b; }
+      .task__wrap--offer p {
+        margin: 0; }
+      .task__wrap--offer .task__fname--offer {
+        margin-top: 10px; }
+  .task__fname {
+    margin-top: 0;
+    color: #42a4ff;
+    font-size: 22px;
+    line-height: 34px; }
+    .task__fname--offer {
+      font-size: 16px;
+      line-height: 27px; }
+  .task__date {
+    margin: 0;
+    text-align: right;
+    font-size: 15px;
+    line-height: 1px;
+    color: #9b9b9b; }
+  .task__description {
+    display: inline-block;
+    width: 545px;
+    margin: 43px 0 0 90px;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 1.8px;
+    color: #575757; }
+  .task__contacts {
+    margin: 7px 0 40px 90px;
+    font-weight: bold;
+    letter-spacing: 2.5px; }
+  .task .icon-thumbs-up-alt {
+    font-size: 18px; }
+  .task .icon-thumbs-down-alt {
+    font-size: 18px; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 113px 0 62px 0;
+  font-size: 24px;
+  color: #575757;
+  border-radius: 10px;
+  border: 1px solid #6acdb1;
+  overflow: hidden; }
+  .card__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 24px 0 24px; }
+    .card__wrapper--bg {
+      margin-top: -10px;
+      padding: 0 24px 0 24px;
+      background-color: #ecfffa; }
+  .card__right--bg {
+    padding-left: 56px; }
+  .card h3 {
+    margin: 0;
+    font-weight: bold;
+    line-height: 50px;
+    letter-spacing: 0.47px; }
+  .card p {
+    margin: 23.5px 0;
+    padding-left: 15px;
+    line-height: 27px;
+    letter-spacing: 0.52px; }
+    .card p:first-child {
+      margin-top: 12px; }
+  .card__img-wrapper {
+    margin: 37px 19px; }
+  .card__img {
+    margin-right: 9px; }
+  .card .icon-rouble {
+    color: #a5a5a5; }
