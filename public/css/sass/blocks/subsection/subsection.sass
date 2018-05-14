@@ -26,17 +26,15 @@
   &__title--accordion
     display: inline-block
   &__avatar
+    margin-bottom: 32px
+    float: left
     width: 76px
     height: 76px
-    float: left
-    margin-bottom: 32px
     &--accordion
       margin-left: 54px
   &__avatar-right
     display: block
     margin: 14px 0 0 95px
-    width: 76px
-    height: 76px
   &__wrap
     display: inline-block
   &__fname
@@ -47,18 +45,6 @@
   &__review
     margin: 21px 0 0 16px
     letter-spacing: 1.4px
-  &__price
-    display: inline-block
-    margin: 12px 0 25px 0
-    padding: 0 4px 0 47px
-    background-color: $color-8
-    color: $color-light
-    font-size: 26.66px
-    font-weight: 400
-    letter-spacing: 2px
-    line-height: 40px
-    text-align: right
-    border-radius: 5px
   &__btn-select
     display: flex
     align-items: center
@@ -119,7 +105,7 @@
     width: 100%
     .subsection__left
       margin-left: -40px
-    .subsection__price
+    .price
       margin-bottom: 23px
   &__content
     height: 0
@@ -168,12 +154,6 @@
   .icon-clock
     padding-right: 5px
     font-size: 20px
-  .icon-thumbs-up-alt
-    font-size: 20px
-    color: $color-8
-  .icon-thumbs-down-alt
-    font-size: 20px
-    color: $color-8
   .icon-location
     padding-right: 5px
     font-size: 24px
@@ -238,3 +218,11 @@
       background-repeat: no-repeat
       background-size: cover
       background-position: center 100%
+.icon-thumbs-up-alt
+  font-size: 20px
+  color: $color-8
+.icon-thumbs-down-alt
+  font-size: 20px
+  color: $color-9
+.icon-down-open-mini
+  display: inline-block
