@@ -80,7 +80,7 @@ class Authorization extends DataEntity
 
     $user = (new UserRepository())->getUser($login);
     if ($user->isregist == '0'){
-      $serverPath = (new GenerateUrlRepository())->checkPath($login);
+      $serverPath = (new GenerateUrlRepository())->checkActivePath($login);
       if ($path === $serverPath) {
         $user->isregist = 1;
         (new UserRepository())->update($user);
@@ -92,6 +92,25 @@ class Authorization extends DataEntity
     return $result;
   }
 
+  public static function forgetPassword($login)
+  {
+    $result = 1;
+    $user = (new UserRepository())->getUser($login);
+    if ($user){
+      $url = (new GenerateUrl($login))->forgetPas();
+      (new SendMail())->forgetPassword($user->email,$user->firstName,$url);
+    }else{
+      $result = 0;
+    }
+    return $result;
+  }
+
+  public static function newPassword($login,$password)
+  {
+    $user = (new UserRepository())->getUser($login);
+    $user->password = md5($password);
+    return (new UserRepository())->update($user);
+  }
 
     public static function logout()
     {

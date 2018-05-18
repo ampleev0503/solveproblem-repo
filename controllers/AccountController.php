@@ -10,6 +10,8 @@ namespace app\controllers;
 
 
 use app\models\Authorization;
+use app\models\repositories\GenerateUrlRepository;
+use app\models\repositories\UserRepository;
 
 class AccountController extends Controller
 {
@@ -27,9 +29,21 @@ class AccountController extends Controller
   }
 
   // Востановление пароля
-  public function actionForget()
+  public function actionRecovery()
   {
-    return '#';
+    if ($_POST['password']) {
+      $password = trim($_POST['password']);
+      $login = trim($_POST['login']);
+      $result = Authorization::newPassword($login,$password);
+      echo $result;
+    }else {
+      $path = trim($_GET['path']);
+      $login = (new GenerateUrlRepository())->checkForgetPath($path);
+      if ($login) {
+        echo $this->render('user/newpassword', ['login' => $login]);
+      } else {
+        header('location: /');
+      }
+    }
   }
-
 }

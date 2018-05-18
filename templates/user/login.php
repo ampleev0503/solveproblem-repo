@@ -21,7 +21,7 @@
             </div>
             <div class="lg__fr__btn">
                 <input type="submit" name="submit" class="login-btn" value="Войти">
-                <div class="forgot-btn"><a href="#"> Забыли пароль?</a></div>
+                <div class="forgot-btn"><a href="/recovery"> Забыли пароль?</a></div>
             </div>
 
         </form>

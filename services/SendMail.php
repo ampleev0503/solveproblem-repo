@@ -20,4 +20,11 @@ class SendMail extends SendMailgun
     $this->text = include '../templates/mail/activeaccount.php';
     $this->send($email,$firstName,$this->subject,$this->text);
   }
+
+  public function forgetPassword($email,$firstName,$url)
+  {
+    $this->subject = 'Востановление пароля';
+    $this->text = include '../templates/mail/forgetpassword.php';
+    $this->send($email,$firstName,$this->subject,$this->text);
+  }
 }
