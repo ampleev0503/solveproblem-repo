@@ -10,12 +10,9 @@ return [
             'class' => \app\services\Db::class,
             'driver' => 'mysql',
             'host' => 'localhost',
-//            'login' => 'vadim',
-//            'password' => 'passdb987JL',
-//            'database' => 'dbslvprblm',
-          'login' => 'developer',
-          'password' => 'Lenina3788',
-          'database' => 'slvprblmDB',
+            'login' => 'vadim',
+            'password' => 'passdb987JL',
+            'database' => 'dbslvprblm',
             'charset' => 'utf8'
         ],
         'request' => [
