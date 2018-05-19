@@ -21,12 +21,12 @@ class RegistController extends Controller
       $lastName = trim($_POST['lastName']);
       $password = trim($_POST['password']);
       $telephone = trim($_POST['telephone']);
-//      echo $email, $firstName, $lastName,$password,$telephone;
 
+      //var_dump($email,$firstName,$lastName,$password,$telephone);die();
       if (Authorization::registration($email, $password,$firstName,$lastName,$telephone)) {
-          echo true;
+          echo '1';
         }else{
-          echo false;
+          echo '0';
         };
 
     }else {
