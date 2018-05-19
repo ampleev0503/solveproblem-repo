@@ -10,13 +10,20 @@ namespace app\controllers;
 
 use app\models\Task;
 use app\models\repositories\TaskRepository;
+use app\models\repositories\CategoryRepository;
 
 class TaskController extends Controller
 {
 
     public function actionIndex()
     {
-        echo $this->render("task/index");
+
+        $dataCategory = array(); // массив для хранения категорий и соответсвующих подкатегорий
+
+        $itemsCategory = (new CategoryRepository())->getAll(); // получение всех категорий из бд
+
+
+        echo $this->render("task/index", ['data' => $dataCategory]);
     }
 
     public function actionCreate()
