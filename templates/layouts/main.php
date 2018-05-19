@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="../js/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css">
 	<link rel="stylesheet" href="../js/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css">
 	<link rel="stylesheet" href="../pakages/css/fontello.css">
-	<link rel="stylesheet" href="../css/styles3.css">
+	<link rel="stylesheet" href="../css/styles.css">
 	<script src="../js/jquery-3.2.1.min.js"></script>
 	<script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 </head>
