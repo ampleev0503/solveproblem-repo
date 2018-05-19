@@ -1,29 +1,11 @@
 $(document).ready(function () {
 	var regist = new Regist();
 
-	document.querySelector('.registration-form').addEventListener('submit', function (ev) {
+	document.querySelector('.form').addEventListener('submit', function (ev) {
 		regist.checkForm(ev);
 	});
-	document.querySelector('.checkbox-custom').addEventListener('click', function () {
+	document.querySelector('.checkbox__span').addEventListener('click', function () {
 		this.style.border = '1px solid #575757';
-	});
-
-	// Показ пароля по нажатию
-	document.querySelector('.eye1').addEventListener('click', function () {
-		var type = document.querySelector('#password').type;
-		if(type ==='password'){
-			document.querySelector('#password').type = 'text';
-		}else{
-			document.querySelector('#password').type = 'password';
-		}
-	});
-	document.querySelector('.eye2').addEventListener('click', function () {
-		var type = document.querySelector('#secondPassword').type;
-		if(type ==='password'){
-			document.querySelector('#secondPassword').type = 'text';
-		}else{
-			document.querySelector('#secondPassword').type = 'password';
-		}
 	});
 
 });
@@ -74,7 +56,7 @@ Regist.prototype.checkForm = function (ev) {
 		if (this.validInput[key] === false){
 			this.labelValidInput = false;
 			if(key === 'agree'){
-				document.querySelector('.checkbox-custom').style.border = '1px solid red';
+				document.querySelector('.checkbox__span').style.border = '1px solid red';
 				continue;
 			}
 			this[key].style.borderColor = this.errorBorder;
@@ -125,8 +107,7 @@ Regist.prototype.sendForm = function () {
 //загрузка лоадера
 Regist.prototype.preLoader = function () {
 
-	document.querySelector('#reg').innerHTML = 'Ожидайте';
-	document.querySelector('.form-wrapper').innerHTML = '';
+	document.querySelector('.title').innerHTML = 'Ожидайте';
 	document.querySelector('.loader').style.display = 'block';
 	window.scrollTo(0,0);
 };
@@ -137,9 +118,9 @@ Regist.prototype.telAnswer = function (access) {
 	this.timerTime = 11;
 	var self = this;
 	//Успешная регистрация
-	if(access){
+	if(access == 1){
 		document.querySelector('.loader').style.display = 'none';
-		document.querySelector('#reg').innerHTML = 'Регистрация прошла успешно';
+		document.querySelector('.title').innerHTML = 'Регистрация прошла успешно';
 		document.querySelector('.form-wrapper').innerHTML = '<div class="answer">Перейдите на указаный email ' +
 				'<span style="color:black"> '+this.email.value+' </span> для подтверждения регистрации <br><a style="text-decoration: underline; color:blue;display: block; margin-top: 60px;" ' +
 				'href="/">' +
@@ -156,6 +137,9 @@ Regist.prototype.telAnswer = function (access) {
 	}else{
 		//Логин занят
 		window.scrollTo(0,0);
+		document.querySelector('.title').innerHTML = 'Регистрация';
+		document.querySelector('.form-wrapper').display = 'block';
+		document.querySelector('.loader').style.display = 'none';
 		this.email.value = '';
 		this.email.style.borderColor = this.errorBorder;
 		this.email.placeholder = 'Логин занят';

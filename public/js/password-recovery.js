@@ -10,21 +10,18 @@ $(document).ready(function () {
 function ForgetPassword(){
 	this.email = document.querySelector('#email');
 	this.wrapper = document.querySelector('.password-recovery-block');
-	this.errorMessage = document.querySelector('.error_message');
+	this.errorMessage = document.querySelector('.recovery_message');
 	this.errorMessage.style.display = 'none';
 }
 
 ForgetPassword.prototype.checkMail = function (ev) {
 	ev.preventDefault();
-	this.email = this.email.value;
-
-
 	var self = this;
 
 	$.ajax({
 		type:"POST",
 		url: "/recovery",
-		data: { email: this.email},
+		data: { email: this.email.value},
 		success: function (data) {
 			self.tellAnswer(data);
 		}

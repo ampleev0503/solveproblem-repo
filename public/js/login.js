@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 	var auth = new Auth();
 
-	document.querySelector('.assignment__form').addEventListener('submit', function (ev) {
+	document.querySelector('.form--authorization').addEventListener('submit', function (ev) {
 		auth.sendForm(ev);
 	});
 
