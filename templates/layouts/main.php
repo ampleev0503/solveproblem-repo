@@ -26,7 +26,7 @@
 					<nav class="content__nav"><i class="icon-down-open-big"></i>Услуги</nav>
 				</div>
 				<div class="content__center">
-					<a href="index.html" class="logo logo--header">#Solve&nbsp;Problem</a>
+					<a href="/" class="logo logo--header">#Solve&nbsp;Problem</a>
 				</div>
 				<div class="content__right">
           <?php if (!$layoutContent['authUser']): ?>
@@ -119,7 +119,7 @@
 				<a href="#" class="social__item social__g-plus"></a>
 				<a href="#" class="social__item social__smile"></a>
 			</div>
-			<a href="index.html" class="logo logo--footer">#Solve&nbsp;Problem</a>
+			<a href="/" class="logo logo--footer">#Solve&nbsp;Problem</a>
 		</div>
 		<div class="footer__copyright">Copyright&nbsp;2018&nbsp;www.solveproblem.ru</div>
 	</footer>
