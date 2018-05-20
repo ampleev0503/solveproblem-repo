@@ -23,7 +23,7 @@
 		<header class="header header--color">
 			<div class="content">
 				<div class="content__left">
-					<a href="/task">+&nbsp;Создать&nbsp;задание</a>
+					<a href="/task/create">+&nbsp;Создать&nbsp;задание</a>
 					<nav class="content__nav"><i class="icon-down-open-big"></i>Услуги</nav>
 				</div>
 				<div class="content__center">

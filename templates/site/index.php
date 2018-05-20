@@ -1,7 +1,7 @@
 <div class="banner">
 	<h1>Решение ваших задач</h1>
 	<h4>Поможем в поиске добросовестных исполнителей ваших целей</h4>
-	<form action="/task" method="post" class="banner__form">
+	<form action="/task/create" method="post" class="banner__form">
 		<input type="text" class="banner__input" name="task-name"
 					 placeholder="Напишите задачу, которую нужно решить" autocomplete="off"><!--
         --><input type="submit" class="banner__btn" value="Заказать услугу">

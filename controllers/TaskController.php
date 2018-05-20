@@ -16,7 +16,7 @@ use app\models\repositories\SubcategoryRepository;
 class TaskController extends Controller
 {
 
-    public function actionIndex()
+    public function actionCreate()
     {
 
         $dataCategory = array(); // массив для хранения категорий и соответсвующих подкатегорий

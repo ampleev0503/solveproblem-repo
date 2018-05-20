@@ -7,7 +7,7 @@
     <h1 class="title">+ Создать задание</h1>
 
     <div class="form-wrapper">
-        <form action="#" method="post" class="form">
+        <form action="/task/create" method="post" class="form">
 
             <p class="form__note">*Все поля обязательны к заполнению</p>
 
@@ -32,7 +32,7 @@
                 </label>
             </div>
 
-            <input type="text" placeholder="Кратко напишите, что вам нужно сделать..."
+            <input type="text" name="nameTask" placeholder="Кратко напишите, что вам нужно сделать..."
                    class="input input--app">
             <p class="form__sample"><span>Пример:</span> <i>Убраться в квартире</i></p>
 
@@ -46,16 +46,16 @@
                         почистить мебель от пыли, сложить вещи в полку, вынести мусор и т.д</i></p>
             </div>
 
-            <input type="text" class="input input--price" pattern="^[ 0-9]+$" placeholder="2000" maxlength="9">
+            <input type="text" name="cost" class="input input--price" pattern="^[ 0-9]+$" placeholder="2000" maxlength="9">
             <p class="form__placeholder-price">Цена: </p>
             <i class="icon-rouble form__rouble"></i>
 
             <div class="form__date-wrapper">
                 <p>Приступить с</p>
-                <input type="text" placeholder="дд.мм.гггг" class="input input--date input--date-start">
+                <input type="text" name="startDate" placeholder="дд.мм.гггг" class="input input--date input--date-start">
                 <i class="icon-calendar icon-calendar__start"></i>
                 <p>Закончить к</p>
-                <input type="text" placeholder="дд.мм.гггг" class="input input--date input--date-finish">
+                <input type="text" name="endDate" placeholder="дд.мм.гггг" class="input input--date input--date-finish">
                 <i class="icon-calendar icon-calendar__finish"></i>
             </div>
 
@@ -104,16 +104,16 @@
 <!--                <input type="password" name="password" class="input input--application" placeholder="Подтвердите пароль" autocomplete="off">-->
 <!--            </div>-->
             <!-- ^^^ Этот блок будет отображаться если пользователь не зарегистрирован и не авторизован ^^^-->
-            <input type="submit" name="button" class="btn btn--default btn--centered btn--submit btn--block" value="Опубликовать">
+            <input type="submit" name="submitCreate" class="btn btn--default btn--centered btn--submit btn--block" value="Опубликовать">
         </form>
     </div>
     <p class="policy">Нажимая кнопку “Опубликовать”<br>
         Вы автоматически соглашаетсь <br>
         с <a href="#">пользовательским соглашением</a> <br>
         и правилами сервиса <a href="www.SolveProblem.ru">www.SolveProblem.ru</a> <br>
-        Так же будет автоматически произведена <br>
-        регистрация и создание “Личного кабинета” <br>
-        на сервисе # SolveProblem</p>
+<!--        Так же будет автоматически произведена <br>-->
+<!--        регистрация и создание “Личного кабинета” <br>-->
+<!--        на сервисе # SolveProblem</p>-->
 </div>
 
 
