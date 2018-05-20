@@ -36,7 +36,7 @@ class Task extends DataEntity
         $this->executorId = $executorId;
         $this->subcategoryId = $subcategoryId;
         $this->cityId = $cityId;
-        $this->created = $created;
+        $this->created;
         $this->statusId = $statusId;
     }
 

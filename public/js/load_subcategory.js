@@ -7,8 +7,8 @@ function loadCity(select)
         subcategorySelect.html(''); // очищаем список подкатегорий
 
         // заполняем список подкатегорий новыми пришедшими данными
-        $.each(subcategoryList, function(i){
-            subcategorySelect.append('<option value="' + i + '">' + this + '</option>');
+        $.each(subcategoryList, function(){
+            subcategorySelect.append('<option value="' + this + '">' + this + '</option>');
         });
     });
 }

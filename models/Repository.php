@@ -66,8 +66,8 @@ abstract class Repository
 
         $sql = "INSERT INTO {$tableName} ({$columns}) VALUES ({$placeholders})";
 
-        //var_dump($sql);
-        //var_dump($params);
+        var_dump($sql);
+        var_dump($params);
 
         return static::getDb()->execute($sql, $params);
     }
