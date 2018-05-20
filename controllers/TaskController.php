@@ -40,7 +40,7 @@ class TaskController extends Controller
         //echo("<pre>");
         //var_dump($dataCategory);
 
-        echo $this->render("task/index", ['data' => $dataCategory]);
+        echo $this->render("task/index", ['dataCategory' => $dataCategory]);
     }
 
     public function actionCreate()

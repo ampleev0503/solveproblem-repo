@@ -13,8 +13,14 @@
 
             <div class="form__left-block">
                 <label>
-                    <select name="category" id="category" class="input select">
+                    <select name="category" onchange="loadCity(this)" id="category" class="input select">
                         <option value="" hidden>Категория</option>
+                        <?php // заполняем список категорий
+                        foreach ($dataCategory as $category => $categoryList)
+                        {
+                            echo '<option value="' . $category . '">' . $category . '</option>' . "\n";
+                        }
+                        ?>
                     </select>
                 </label>
             </div>
@@ -109,5 +115,6 @@
         регистрация и создание “Личного кабинета” <br>
         на сервисе # SolveProblem</p>
 </div>
+
 
 </div>

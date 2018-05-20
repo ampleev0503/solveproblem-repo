@@ -21,10 +21,10 @@ abstract class SendMailgun
   private $mgClient;
     //private $domain = "sandbox2564776a264b44e5957b55f6558c777d.mailgun.org"; // Артём
     //private $from = 'Solveproblem <postmaster@sandbox2564776a264b44e5957b55f6558c777d.mailgun.org>'; // Артём
-    //private $domain = "sandbox501b4d2bd8e04751b7edcfb7d8dbd377.mailgun.org"; // Вадим
-    //private $from = 'Solveproblem <postmaster@sandbox501b4d2bd8e04751b7edcfb7d8dbd377.mailgun.org>'; // Вадим
-    private $domain = "solveproblem.ru"; // SP
-    private $from = 'Solveproblem <postmaster@solveproblem.ru>'; // SP
+    private $domain = "sandbox501b4d2bd8e04751b7edcfb7d8dbd377.mailgun.org"; // Вадим
+    private $from = 'Solveproblem <postmaster@sandbox501b4d2bd8e04751b7edcfb7d8dbd377.mailgun.org>'; // Вадим
+    //private $domain = "solveproblem.ru"; // SP
+    //private $from = 'Solveproblem <postmaster@solveproblem.ru>'; // SP
 
 
 
