@@ -1,0 +1,33 @@
+.profile-btn
+  width: 278px
+  height: 40px
+  margin: 78px 0 10px 0
+  box-sizing: border-box
+  cursor: pointer
+  &__item
+    display: inline-block
+    margin: 0
+    width: 138px
+    height: 38px
+    color: $color-dark-3
+    font-size: 20px
+    font-weight: 400
+    line-height: 38px
+    letter-spacing: 2.6px
+    text-align: center
+    background-color: $color-light
+    &:hover
+      color: $color-light
+      background-color: $color-2
+      transition: 0.5s
+  &__left
+    border-radius: 5px 0 0 5px
+    border: 1px solid $color-2
+    border-right: none
+  &__right
+    border-radius: 0 5px 5px 0
+    border: 1px solid $color-2
+    border-left: none
+  .profile-btn__active
+    color: $color-light
+    background-color: $color-2
