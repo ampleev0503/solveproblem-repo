@@ -40,6 +40,20 @@ class TaskController extends Controller
         //echo("<pre>");
         //var_dump($dataCategory);
 
+        if (isset($_GET['action']) && $_GET['action'] == 'getSubcategory')
+        {
+            if (isset($dataCategory[$_GET['category']]))
+            {
+                echo json_encode($dataCategory[$_GET['category']]); // возвращаем данные в JSON формате;
+            }
+            else
+            {
+                echo json_encode(array('Подкатегория'));
+            }
+
+            exit;
+        }
+
         echo $this->render("task/index", ['dataCategory' => $dataCategory]);
     }
 
@@ -48,5 +62,6 @@ class TaskController extends Controller
         //$task = new Task('тестовая задача 1', 'Починить iphone', '19.05.2018','21.05.2018', 500, 4, 3, 1, 1);
 
     }
+
 
 }

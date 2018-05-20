@@ -129,6 +129,7 @@
     <script src="../js/main.js"></script>
     <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script src="../js/calendarScript.js"></script>
+    <script src="../js/load_subcategory.js"></script>
 
 
 

@@ -59,50 +59,50 @@
                 <i class="icon-calendar icon-calendar__finish"></i>
             </div>
 
-            <div class="form__download">
-                <div class="download">
-                    <div class="download__circle">
-                        <span class="download__plus">+</span>
-                    </div>
-                    <p>Добавить фото или перетащите сюда</p>
-                </div>
-                <div class="download">
-                    <div class="download__circle">
-                        <span class="download__plus">+</span>
-                    </div>
-                    <p>Добавить фото или перетащите сюда</p>
-                </div>
-                <div class="download">
-                    <div class="download__circle">
-                        <span class="download__plus">+</span>
-                    </div>
-                    <p>Добавить фото или перетащите сюда</p>
-                </div>
-                <div class="download">
-                    <div class="download__circle">
-                        <span class="download__plus">+</span>
-                    </div>
-                    <p>Добавить фото или перетащите сюда</p>
-                </div>
-            </div>
+<!--            <div class="form__download">-->
+<!--                <div class="download">-->
+<!--                    <div class="download__circle">-->
+<!--                        <span class="download__plus">+</span>-->
+<!--                    </div>-->
+<!--                    <p>Добавить фото или перетащите сюда</p>-->
+<!--                </div>-->
+<!--                <div class="download">-->
+<!--                    <div class="download__circle">-->
+<!--                        <span class="download__plus">+</span>-->
+<!--                    </div>-->
+<!--                    <p>Добавить фото или перетащите сюда</p>-->
+<!--                </div>-->
+<!--                <div class="download">-->
+<!--                    <div class="download__circle">-->
+<!--                        <span class="download__plus">+</span>-->
+<!--                    </div>-->
+<!--                    <p>Добавить фото или перетащите сюда</p>-->
+<!--                </div>-->
+<!--                <div class="download">-->
+<!--                    <div class="download__circle">-->
+<!--                        <span class="download__plus">+</span>-->
+<!--                    </div>-->
+<!--                    <p>Добавить фото или перетащите сюда</p>-->
+<!--                </div>-->
+<!--            </div>-->
 
             <!-- vvv Этот блок будет отображаться если пользователь не зарегистрирован и не авторизован vvv -->
-            <div class="application-block">
-                <div class="form__left-block">
-                    <input type="text" class="input input--app" name="name"
-                           placeholder="Введите имя" autocomplete="off">
-                </div>
-                <div class="form__right-block">
-                    <input type="text" class="input input--sm" name="surname"
-                           placeholder="Введите фамилию" autocomplete="off">
-                </div>
-                <input type="text" name="city" class="input input--application" placeholder="Город">
-                <input type="email" name="email" class="input input--application" placeholder="Введите e-mail адрес">
-                <input type="text" name="phone" class="input input--application input--app-phone" placeholder="Тел. +7-(000)-000-00-00">
-                <span class="form__note-sm form__note-sm-app">Сгенерировать пароль</span>
-                <input type="password" name="password" class="input input--application" placeholder="Придумайте пароль" autocomplete="off">
-                <input type="password" name="password" class="input input--application" placeholder="Подтвердите пароль" autocomplete="off">
-            </div>
+<!--            <div class="application-block">-->
+<!--                <div class="form__left-block">-->
+<!--                    <input type="text" class="input input--app" name="name"-->
+<!--                           placeholder="Введите имя" autocomplete="off">-->
+<!--                </div>-->
+<!--                <div class="form__right-block">-->
+<!--                    <input type="text" class="input input--sm" name="surname"-->
+<!--                           placeholder="Введите фамилию" autocomplete="off">-->
+<!--                </div>-->
+<!--                <input type="text" name="city" class="input input--application" placeholder="Город">-->
+<!--                <input type="email" name="email" class="input input--application" placeholder="Введите e-mail адрес">-->
+<!--                <input type="text" name="phone" class="input input--application input--app-phone" placeholder="Тел. +7-(000)-000-00-00">-->
+<!--                <span class="form__note-sm form__note-sm-app">Сгенерировать пароль</span>-->
+<!--                <input type="password" name="password" class="input input--application" placeholder="Придумайте пароль" autocomplete="off">-->
+<!--                <input type="password" name="password" class="input input--application" placeholder="Подтвердите пароль" autocomplete="off">-->
+<!--            </div>-->
             <!-- ^^^ Этот блок будет отображаться если пользователь не зарегистрирован и не авторизован ^^^-->
             <input type="submit" name="button" class="btn btn--default btn--centered btn--submit btn--block" value="Опубликовать">
         </form>
