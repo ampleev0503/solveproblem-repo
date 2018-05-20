@@ -37,9 +37,7 @@ class TaskController extends Controller
             }
         }
 
-        //echo("<pre>");
-        //var_dump($dataCategory);
-
+            // Проверяем: пришел ли аякс запрос на смену категории
         if (isset($_GET['action']) && $_GET['action'] == 'getSubcategory')
         {
             if (isset($dataCategory[$_GET['category']]))
@@ -56,12 +54,5 @@ class TaskController extends Controller
 
         echo $this->render("task/index", ['dataCategory' => $dataCategory]);
     }
-
-    public function actionCreate()
-    {
-        //$task = new Task('тестовая задача 1', 'Починить iphone', '19.05.2018','21.05.2018', 500, 4, 3, 1, 1);
-
-    }
-
 
 }
