@@ -54,3 +54,19 @@
     bread-crumbs.html
     task-page.html
     footer.html
+
+8. profile.html
+
+    doctype-head.html
+    header-logged.html
+    bread-crumbs.html
+    profile.html
+    footer.html
+
+9. all-services.html
+
+    doctype-head.html
+    header-logged.html
+    bread-crumbs.html
+    all-services.html
+    footer.html
