@@ -69,6 +69,7 @@ class Authorization extends DataEntity
               $url = (new GenerateUrl($user->email))->activeRegist();
               (new SendMail())->accountActive($user->email,$user->firstName,$url);
               $result = true;
+              //var_dump($result);
             }
         }
         return $result;

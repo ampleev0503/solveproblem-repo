@@ -125,9 +125,9 @@
 		<div class="footer__copyright">Copyright&nbsp;2018&nbsp;www.solveproblem.ru</div>
 	</footer>
 
-    <script src="../js/jquery-3.2.1.min.js"></script>
+<!--    <script src="../js/jquery-3.2.1.min.js"></script>-->
     <script src="../js/main.js"></script>
-    <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<!--    <script src="../js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>-->
     <script src="../js/calendarScript.js"></script>
     <script src="../js/load_subcategory.js"></script>
 

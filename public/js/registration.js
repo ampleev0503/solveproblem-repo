@@ -96,10 +96,10 @@ Regist.prototype.sendForm = function () {
 			email: this.email.value,telephone: this.telephone.value},
 		success: function (data) {
 			if(data) {
-				self.telAnswer(data);
-			}else{
-				self.telAnswer(data);
-			}
+            	self.telAnswer(data);
+            }else{
+            	self.telAnswer(data);
+            }
 		}
 	});
 };
