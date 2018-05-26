@@ -100,6 +100,7 @@ Regist.prototype.sendForm = function () {
             }else{
             	self.telAnswer(data);
             }
+            console.log(data);
 		}
 	});
 };

@@ -31,6 +31,7 @@ Auth.prototype.sendForm = function (ev) {
 		url: "/login",
 		data: { submit: true, email: this.login, password: this.password},
 		success: function (data) {
+			console.log(data);
 			if(data) {
 				self.tellError(data);
 			}else{
