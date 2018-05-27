@@ -12,6 +12,7 @@ use app\models\Task;
 use app\models\repositories\TaskRepository;
 use app\models\repositories\CategoryRepository;
 use app\models\repositories\SubcategoryRepository;
+use app\models\repositories\UserRepository;
 
 use app\models\Authorization;
 
@@ -84,7 +85,26 @@ class TaskController extends Controller
     public function actionAll() {
         $itemsTask = (new TaskRepository())->getAll();
         $itemsCategory = (new CategoryRepository())->getAll();
-        echo $this->render("task/all", ['itemsTask' => $itemsTask, 'itemsCategory' => $itemsCategory]);
+        $itemsUser = (new UserRepository())->getAll();
+
+        $dataUser = array(); // массив для хранения задач и соответсвующих пользователей
+
+        /** @var \app\models\Task[] $itemsTask */
+        /** @var \app\models\User[] $itemsUser */
+        foreach ($itemsTask as $task){
+            foreach ($itemsUser as $user){
+                if ($task->customerId == $user->id){
+                    $dataUser[$task->id][] = $user->id;
+                    $dataUser[$task->id][] = $user->firstName;
+                    $dataUser[$task->id][] = $user->lastName;
+                }
+            }
+        }
+
+        //echo("<pre>");
+        //var_dump($dataUser);
+
+        echo $this->render("task/all", ['itemsTask' => $itemsTask, 'itemsCategory' => $itemsCategory, 'dataUser' => $dataUser]);
     }
 
 }

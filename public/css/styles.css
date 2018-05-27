@@ -2367,6 +2367,9 @@
 }
 
 .services-subsection__title {
+	display: block;
+	text-decoration: none;
+	color: #575757;
 	max-width: 634px;
 	font-size: 33px;
 	line-height: 40px;
