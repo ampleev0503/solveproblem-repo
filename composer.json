@@ -1,0 +1,13 @@
+{
+    "name": "artem/solveproblem-repo",
+    "authors": [
+        {
+            "name": "grimailo",
+            "email": "mail.grimailo@gmail.com"
+        }
+    ],
+    "require": {
+        "mailgun/mailgun-php" : "*",
+        "php-http/guzzle6-adapter": "^1.1"
+    }
+}
