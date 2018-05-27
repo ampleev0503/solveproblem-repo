@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\base\App;
 use app\models\Task;
 use app\models\repositories\TaskRepository;
 use app\models\repositories\CategoryRepository;
@@ -105,6 +106,16 @@ class TaskController extends Controller
         //var_dump($dataUser);
 
         echo $this->render("task/all", ['itemsTask' => $itemsTask, 'itemsCategory' => $itemsCategory, 'dataUser' => $dataUser]);
+    }
+
+    public function actionCard() {
+        $id = App::call()->request->get('id');
+        $task = (new TaskRepository())->getOne($id);
+
+        $customer = (new UserRepository())->getOne($task['customerId']);
+        $subcategory = (new SubcategoryRepository())->getOne($task['subcategoryId']);
+
+        echo $this->render("task/card", ['task' => $task, 'customer' => $customer, 'subcategory' => $subcategory]);
     }
 
 }

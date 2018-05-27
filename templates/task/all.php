@@ -2,6 +2,10 @@
 <?php /** @var \app\models\Category[] $itemsCategory */ ?>
 <!--Все услуги-->
 
+<div class="bread-crumbs">
+    <a href="/" class="bread-crumbs__link"><i class="icon-left-open-big"></i>На&nbsp;главную</a>
+</div>
+
 <div class="all-services-block">
 
     <div class="all-services">
