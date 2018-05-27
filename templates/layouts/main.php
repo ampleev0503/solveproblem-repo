@@ -27,7 +27,7 @@
 <!--					<nav class="content__nav"><i class="icon-down-open-big"></i>Услуги</nav>-->
 
                     <a class="create__task" href="/task/create">+&nbsp;Создать&nbsp;задание</a>
-                    <a class="all__tasks" href="#">Все задачи</a>
+                    <a class="all__tasks" href="/task/all">Все задачи</a>
 
 				</div>
 				<div class="content__center">

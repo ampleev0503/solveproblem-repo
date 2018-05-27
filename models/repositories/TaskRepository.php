@@ -24,4 +24,18 @@ class TaskRepository extends Repository
         //возвратит полное имя класса с пространством имён
         return Task::class;
     }
+
+    public function getTasksByIds($idsArray) {
+        $tableName = static::getTableName();
+
+        $idsArray = implode(',', $idsArray);
+
+        $sql = "SELECT * FROM {$tableName} WHERE id IN ($idsArray)";
+
+        //var_dump($sql);
+
+        return static::getDb()->queryAll($sql, [], static::getEntityClass());
+
+
+    }
 }

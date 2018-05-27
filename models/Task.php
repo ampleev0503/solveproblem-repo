@@ -8,6 +8,8 @@
 
 namespace app\models;
 
+use app\helpers\Url;
+
 
 class Task extends DataEntity
 {
@@ -39,6 +41,16 @@ class Task extends DataEntity
         $this->created;
         $this->statusId = $statusId;
     }
+
+    public function getUrl()
+    {
+        if($this->id){
+            return (new Url())->generate("task", "card", ['id' => $this->id]);
+        }
+        return false;
+    }
+
+
 
 
 }

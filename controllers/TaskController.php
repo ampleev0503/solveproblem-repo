@@ -79,8 +79,12 @@ class TaskController extends Controller
         }
 
         echo $this->render("task/index", ['dataCategory' => $dataCategory]);
+    }
 
-
+    public function actionAll() {
+        $itemsTask = (new TaskRepository())->getAll();
+        $itemsCategory = (new CategoryRepository())->getAll();
+        echo $this->render("task/all", ['itemsTask' => $itemsTask, 'itemsCategory' => $itemsCategory]);
     }
 
 }
