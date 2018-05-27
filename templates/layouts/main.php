@@ -23,8 +23,12 @@
 		<header class="header header--color">
 			<div class="content">
 				<div class="content__left">
-					<a href="/task/create">+&nbsp;Создать&nbsp;задание</a>
-					<nav class="content__nav"><i class="icon-down-open-big"></i>Услуги</nav>
+<!--					<a href="/task/create">+&nbsp;Создать&nbsp;задание</a>-->
+<!--					<nav class="content__nav"><i class="icon-down-open-big"></i>Услуги</nav>-->
+
+                    <a class="create__task" href="/task/create">+&nbsp;Создать&nbsp;задание</a>
+                    <a class="all__tasks" href="#">Все задачи</a>
+
 				</div>
 				<div class="content__center">
 					<a href="/" class="logo logo--header">#Solve&nbsp;Problem</a>

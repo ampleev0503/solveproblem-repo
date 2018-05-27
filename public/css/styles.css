@@ -73,6 +73,8 @@
     display: inline-block;
     color: #fff;
     cursor: pointer; }
+  .all__tasks {
+	margin-left: 10px; }
     .content__nav:hover, .content a:hover {
       color: #6acdb1; }
     .content__nav:active, .content a:active {
