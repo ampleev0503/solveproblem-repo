@@ -9,6 +9,8 @@
 namespace app\controllers;
 
 use app\base\App;
+use app\models\PotentialExecutorTask;
+use app\models\repositories\PotentialExecutorTaskRepository;
 use app\models\Task;
 use app\models\repositories\TaskRepository;
 use app\models\repositories\CategoryRepository;
@@ -115,7 +117,30 @@ class TaskController extends Controller
         $customer = (new UserRepository())->getOne($task['customerId']);
         $subcategory = (new SubcategoryRepository())->getOne($task['subcategoryId']);
 
-        echo $this->render("task/card", ['task' => $task, 'customer' => $customer, 'subcategory' => $subcategory]);
+          // если была нажата кнопка "предложить"
+        if (isset($_POST['submitSuggest'])) {
+            // Если пользователь не авторизован, то перенаправляем на страницу авторизации
+            if (!Authorization::authUser())
+                header("Location: /login");
+
+            $potentialExecutorTask = new PotentialExecutorTask($_SESSION['id_user'], $task['id'], "Привет. Могу выполнить это задание.");
+            (new PotentialExecutorTaskRepository())->insert($potentialExecutorTask);
+        }
+
+        $potentialExecutorTaskItems = (new PotentialExecutorTaskRepository())::getTasksByExecutorId($task['id']);
+        //var_dump($potentialExecutorTaskItems);
+
+        $dataPotExecutors = array(); // массив для хранения потенциальных исполнителей соответсвующей задачи
+        foreach ($potentialExecutorTaskItems as $peti){
+            $dataPotExecutors[] = $peti->executorId;
+        }
+
+          // если сущесвтвуют потенциальные исполнители
+        if ($dataPotExecutors)
+            $potentialExecutors = (new UserRepository())->getUsersByIds($dataPotExecutors);
+
+        echo $this->render("task/card", ['task' => $task, 'customer' => $customer, 'subcategory' => $subcategory,
+            'potentialExecutors' => $potentialExecutors, 'dataPotExecutors' => $dataPotExecutors]);
     }
 
 }

@@ -14,8 +14,8 @@ use app\models\repositories\GenerateUrlRepository;
 class GenerateUrl
 {
   private $url;
-  private $pathDomain = 'https://solveproblem.ru';
-  //private $pathDomain = '192.168.0.4';
+  //private $pathDomain = 'https://solveproblem.ru';
+  private $pathDomain = '192.168.0.4';
   private $pathController = '/account';
   private $salt = '7a5bec';
   private $pathAction;

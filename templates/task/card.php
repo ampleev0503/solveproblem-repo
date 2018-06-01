@@ -1,5 +1,7 @@
 <?php/** @var \app\models\Task $task*/?>
 <?php/** @var \app\models\User $customer*/?>
+<?php/** @var \app\models\User[] $potentialExecutors*/?>
+
 
 <div class="bread-crumbs">
     <a href="/" class="bread-crumbs__link"><i class="icon-left-open-big"></i>На&nbsp;главную</a>
@@ -87,7 +89,17 @@
 
                     </div>
                 </div>
-                <a href="#" class="btn btn--default btn--task btn--inline-block">Предложить</a>
+<!--                <a href="#" class="btn btn--default btn--task btn--inline-block">Предложить</a>-->
+
+                <?php if ( ($_SESSION['id_user'] != $task['customerId'] && !in_array($_SESSION['id_user'], $dataPotExecutors)) || !isset($_SESSION['id_user'])): ?>
+                    <form action="/task/card?id=<?= $task['id']?>" method="post" class="form">
+                        <input type="submit" name="submitSuggest" class="btn btn--default btn--task btn--centered btn--submit btn--block" value="Предложить">
+                    </form>
+                <?php endif; ?>
+
+
+
+
             </section>
         </div>  <!--task__left end-->
 
@@ -122,55 +134,64 @@
 
 </div>  <!--task-page-block end-->
 
-<!--Если предложение сделано-->
 
-<div class="task-page-block">
+<?php if ($potentialExecutors): ?>
+    <?php foreach ($potentialExecutors as $pE): ?>
+        <!--Если предложение сделано-->
+        <div class="task-page-block">
 
-    <div class="task">
+            <div class="task">
 
-<!--        <div class="task__left">-->
-<!---->
-<!--            <p class="task__category">-->
-<!--                Уборка и помощь по хозяйству-->
-<!--            </p>-->
-<!---->
-<!---->
-<!--            <h2 class="task__title--offer">-->
-<!--                Ваше предложение-->
-<!--            </h2>-->
-<!--            <img src="../img/avatar1.jpg" alt="avatar" class="task__avatar task__avatar--offer">-->
-<!--            <div class="task__wrap task__wrap--offer">-->
-<!--                <p class="task__fname task__fname--offer">-->
-<!--                    Дмитрий-->
-<!--                    <span class="task__sname">Б.</span>-->
-<!--                </p>-->
-<!--                <p class="task__location">-->
-<!--                    Москва-->
-<!--                </p>-->
-<!--                <p class="task__review">-->
-<!--                    Отзывы:-->
-<!--                    <i class="icon-thumbs-up-alt"></i>-->
-<!--                    <span class="task__like">5</span>-->
-<!--                    <i class="icon-thumbs-down-alt"></i>-->
-<!--                    <span class="task__dislike">0</span>-->
-<!--                </p>-->
-<!--            </div>-->
-<!--            <p class="task__description">-->
-<!--                Привет. Могу выполнить это задание.-->
-<!--            </p>-->
-<!--            <p class="task__description task__contacts">-->
-<!--                Ваши контакты:-->
-<!--                <span>-->
-<!--            +7-(000)-000-00-00-->
-<!--          </span>-->
-<!--            </p>-->
-<!--        </div>  -->
+                <div class="task__left">
+
+                    <p class="task__category">
+                        <?= $subcategory['name']?>
+                    </p>
 
 
+                    <h2 class="task__title--offer">
+                        Ваше предложение
+                    </h2>
+                    <img src="../img/avatar1.jpg" alt="avatar" class="task__avatar task__avatar--offer">
+                    <div class="task__wrap task__wrap--offer">
+                        <p class="task__fname task__fname--offer">
+                            <?= $pE->firstName?>
+                            <span class="task__sname"><?= $pE->lastName?></span>
+                        </p>
+                        <p class="task__location">
+                            Москва
+                        </p>
+                        <p class="task__review">
+                            Отзывы:
+                            <i class="icon-thumbs-up-alt"></i>
+                            <span class="task__like">5</span>
+                            <i class="icon-thumbs-down-alt"></i>
+                            <span class="task__dislike">0</span>
+                        </p>
+                    </div>
+                    <p class="task__description">
+                        Привет. Могу выполнить это задание.
+                    </p>
+                    <p class="task__description task__contacts">
+                        Мои контакты:
+                        <span>
+                <?= $pE->telephone?>
+              </span>
+                    </p>
+                </div>
 
-    </div>
 
-</div>  <!--task-page-block end-->
+
+
+
+
+            </div>
+
+
+        </div>  <!--task-page-block end-->
+    <?php endforeach; ?>
+<?php endif; ?>
+
 
 </div>  <!--container end-->
 <!--СТРАНИЦА ЗАДАНИЯ end-->

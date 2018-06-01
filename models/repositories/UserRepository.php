@@ -21,6 +21,16 @@ inner join user_role as role on role.oid_user = user.id
     return static::getDb()->queryObject($sql, [':login' => $login], static::getEntityClass());
   }
 
+    public function getUsersByIds($idsArray) {
+        $tableName = static::getTableName();
+
+        $idsArray = implode(',', $idsArray);
+
+        $sql = "SELECT * FROM {$tableName} WHERE id IN ($idsArray)";
+
+        return static::getDb()->queryAll($sql, [], static::getEntityClass());
+    }
+
   public function addRole($id_user)
   {
     $tableName = static::getTableRole();
