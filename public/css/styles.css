@@ -526,11 +526,13 @@
 	line-height: 40px;
 }
 
-.footer__link:hover {
+.footer__link:hover,
+.services-subsection__title:hover {
 	color: #6acdb1;
 }
 
-.footer__link:active {
+.footer__link:active,
+.services-subsection__title:active{
 	color: #ffb084;
 }
 
@@ -1298,6 +1300,14 @@
 	cursor: pointer;
 }
 
+.subsection__header:hover h2 {
+	color: #6acdb1;
+}
+
+/*.subsection__left:hover {*/
+	/*color: #6acdb1;*/
+/*}*/
+
 .subsection__right {
 	text-align: right;
 }
@@ -1588,6 +1598,8 @@
 }
 
 .subsection__write-review {
+	display: block;
+	text-decoration: none;
 	font-size: 23px;
 	line-height: 80px;
 	color: #53abff;

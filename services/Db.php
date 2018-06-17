@@ -79,10 +79,11 @@ class Db
     }
 
     //метод, возвращающий одну строчку из таблицы
-    public function queryOne($sql, $params = [])
+    public function queryOne($sql, $params = [], $class = null)
     {
-      $smtp = $this->query($sql, $params);
-      return $smtp->fetch();
+//      $smtp = $this->query($sql, $params);
+//      return $smtp->fetch();
+        return $this->queryAll($sql, $params, $class)[0];
     }
 
     //метод, возвращающий набор строк из таблицы

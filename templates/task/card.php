@@ -18,10 +18,10 @@
         <div class="task__left">
             <div class="task__title-price-wrapper">
                 <h2 class="task__title">
-                    <?= $task['name']?>
+                    <?= $task->name?>
                 </h2>
                 <p class="price price--task">
-                    <?= $task['cost']?>
+                    <?= $task->cost?>
                     <i class="icon-rouble subsection__icon-rouble"></i>
                 </p>
             </div>
@@ -36,11 +36,11 @@
             15 просмотров
           </span>
                 <span class="task__date">
-            Создано <?= date("d.m.y", strtotime($task['created'])) ?>
+            Создано <?= date("d.m.y", strtotime($task->created)) ?>
           </span>
             </div>
             <p class="task__category">
-                <?= $subcategory['name']?>
+                <?= $subcategory->name?>
             </p>
 
             <section class="card">
@@ -65,13 +65,13 @@
                             Москва
                         </p>
                         <p class="card__start">
-                            <?= date("d.m.y", strtotime($task['startDate'])) ?>
+                            <?= date("d.m.y", strtotime($task->startDate)) ?>
                         </p>
                         <p class="card__end">
-                            <?= date("d.m.y", strtotime($task['endDate'])) ?>
+                            <?= date("d.m.y", strtotime($task->endDate)) ?>
                         </p>
                         <p class="card__price">
-                            <?= $task['cost']?>
+                            <?= $task->cost?>
                             <i class="icon-rouble"></i>
                         </p>
                     </div>
@@ -84,15 +84,15 @@
                     </div>
                     <div class="card__right card__right--bg">
                         <p class="card__description">
-                            <?= $task['description']?>
+                            <?= $task->description?>
                         </p>
 
                     </div>
                 </div>
 <!--                <a href="#" class="btn btn--default btn--task btn--inline-block">Предложить</a>-->
 
-                <?php if ( ($_SESSION['id_user'] != $task['customerId'] && !in_array($_SESSION['id_user'], $dataPotExecutors)) || !isset($_SESSION['id_user'])): ?>
-                    <form action="/task/card?id=<?= $task['id']?>" method="post" class="form">
+                <?php if ( ($_SESSION['id_user'] != $task->customerId && !in_array($_SESSION['id_user'], $dataPotExecutors)) || !isset($_SESSION['id_user'])): ?>
+                    <form action="/task/card?id=<?= $task->id?>" method="post" class="form">
                         <input type="submit" name="submitSuggest" class="btn btn--default btn--task btn--centered btn--submit btn--block" value="Предложить">
                     </form>
                 <?php endif; ?>
@@ -106,7 +106,7 @@
         <div class="task__right">
             <p class="task__number">
                 Задание
-                <span><?= $task['id']?></span>
+                <span><?= $task->id?></span>
             </p>
             <p>
                 Заказчик этого задания
@@ -114,8 +114,8 @@
             <img src="../img/avatar1.jpg" alt="avatar" class="task__avatar">
             <div class="task__wrap">
                 <p class="task__fname">
-                    <?= $customer['firstName']?>
-                    <span class="task__sname"><?= $customer['lastName']?></span>
+                    <?= $customer->firstName?>
+                    <span class="task__sname"><?= $customer->lastName?></span>
                 </p>
                 <p class="task__location">
                     Москва
@@ -145,12 +145,12 @@
                 <div class="task__left">
 
                     <p class="task__category">
-                        <?= $subcategory['name']?>
+                        <?= $subcategory->name?>
                     </p>
 
 
                     <h2 class="task__title--offer">
-                        Ваше предложение
+                        Предложение
                     </h2>
                     <img src="../img/avatar1.jpg" alt="avatar" class="task__avatar task__avatar--offer">
                     <div class="task__wrap task__wrap--offer">
