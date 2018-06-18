@@ -13,7 +13,7 @@
 
             <div class="form__left-block">
                 <label>
-                    <select name="category" onchange="loadCity(this)" id="category" class="input select">
+                    <select name="category" required onchange="loadCity(this)" id="category" class="input select">
                         <option value="" hidden>Категория</option>
                         <?php // заполняем список категорий
                         foreach ($dataCategory as $category => $categoryList)
@@ -26,18 +26,18 @@
             </div>
             <div class="form__right-block">
                 <label>
-                    <select name="subcategory" id="subcategory" class="input select">
+                    <select name="subcategory" required id="subcategory" class="input select">
                         <option value="" hidden>Подкатегория</option>
                     </select>
                 </label>
             </div>
 
-            <input type="text" name="nameTask" placeholder="Кратко напишите, что вам нужно сделать..."
-                   class="input input--app">
+            <input type="text" required name="nameTask" placeholder="Кратко напишите, что вам нужно сделать..."
+                   class="input input--app" value="<?= $taskName ?>"
             <p class="form__sample"><span>Пример:</span> <i>Убраться в квартире</i></p>
 
             <label>
-                <textarea name="full-description" id="full-description" class="input input--app input--textarea" cols="30" rows="10" maxlength="2000"></textarea>
+                <textarea name="full-description" required id="full-description" class="input input--app input--textarea" cols="30" rows="10" maxlength="2000"></textarea>
             </label>
             <div id="placeholderTextarea" class="form__placeholder-textarea">
                 <p>Подробное описание вашей задачи и условий...</p><br>
@@ -46,16 +46,16 @@
                         почистить мебель от пыли, сложить вещи в полку, вынести мусор и т.д</i></p>
             </div>
 
-            <input type="text" name="cost" class="input input--price" pattern="^[ 0-9]+$" placeholder="2000" maxlength="9">
+            <input type="text" name="cost" required class="input input--price" pattern="^[ 0-9]+$" placeholder="2000" maxlength="9">
             <p class="form__placeholder-price">Цена: </p>
             <i class="icon-rouble form__rouble"></i>
 
             <div class="form__date-wrapper">
                 <p>Приступить с</p>
-                <input type="text" name="startDate" placeholder="дд.мм.гггг" class="input input--date input--date-start">
+                <input type="text" name="startDate" required placeholder="дд.мм.гггг" class="input input--date input--date-start">
                 <i class="icon-calendar icon-calendar__start"></i>
                 <p>Закончить к</p>
-                <input type="text" name="endDate" placeholder="дд.мм.гггг" class="input input--date input--date-finish">
+                <input type="text" name="endDate" required placeholder="дд.мм.гггг" class="input input--date input--date-finish">
                 <i class="icon-calendar icon-calendar__finish"></i>
             </div>
 

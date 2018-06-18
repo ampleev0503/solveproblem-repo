@@ -26,12 +26,18 @@
                 </p>
             </div>
             <div class="task__info">
-          <span class="task__open">
-            Открыто для предложений
-          </span>
-                <span style="display: none" class="task__close">
-            Закрыто для предложений
-          </span>
+
+                <?php if($task->statusId == 1):?>
+                    <span class="task__open">
+                        Открыто для предложений
+                    </span>
+                <?php else: ?>
+                    <span class="task__close">
+                        Закрыто для предложений
+                    </span>
+                <?php endif;?>
+
+
                 <span class="task__views">
             15 просмотров
           </span>
@@ -91,7 +97,7 @@
                 </div>
 <!--                <a href="#" class="btn btn--default btn--task btn--inline-block">Предложить</a>-->
 
-                <?php if ( ($_SESSION['id_user'] != $task->customerId && !in_array($_SESSION['id_user'], $dataPotExecutors)) || !isset($_SESSION['id_user'])): ?>
+                <?php if ( ($task->statusId == 1 && $_SESSION['id_user'] != $task->customerId && !in_array($_SESSION['id_user'], $dataPotExecutors)) || !isset($_SESSION['id_user'])): ?>
                     <form action="/task/card?id=<?= $task->id?>" method="post" class="form">
                         <input type="submit" name="submitSuggest" class="btn btn--default btn--task btn--centered btn--submit btn--block" value="Предложить">
                     </form>
@@ -113,10 +119,10 @@
             </p>
             <img src="../img/avatar1.jpg" alt="avatar" class="task__avatar">
             <div class="task__wrap">
-                <p class="task__fname">
+                <a class="task__fname" href="/user?id=<?= $customer->id?>">
                     <?= $customer->firstName?>
                     <span class="task__sname"><?= $customer->lastName?></span>
-                </p>
+                </a>
                 <p class="task__location">
                     Москва
                 </p>
@@ -154,10 +160,10 @@
                     </h2>
                     <img src="../img/avatar1.jpg" alt="avatar" class="task__avatar task__avatar--offer">
                     <div class="task__wrap task__wrap--offer">
-                        <p class="task__fname task__fname--offer">
+                        <a class="task__fname task__fname--offer" href="/user?id=<?= $pE->id?>">
                             <?= $pE->firstName?>
                             <span class="task__sname"><?= $pE->lastName?></span>
-                        </p>
+                        </a>
                         <p class="task__location">
                             Москва
                         </p>

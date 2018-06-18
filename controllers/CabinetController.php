@@ -8,6 +8,9 @@
 
 namespace app\controllers;
 
+use app\base\App;
+use app\models\Feedback;
+use app\models\repositories\FeedbackRepository;
 use app\models\Task;
 use app\models\repositories\TaskRepository;
 use app\models\Authorization;
@@ -58,6 +61,33 @@ class CabinetController extends Controller
             $task->executorId = null;
             echo((new TaskRepository())->update($task));
         }
+    }
+
+    public function actionReview()
+    {
+        // Если пользователь не авторизован, то перенаправляем на страницу авторизации
+        if (!Authorization::authUser())
+            header("Location: /login");
+
+        if (isset($_POST['submit'])) {
+            $id = App::call()->request->get('id');
+            $task = (new TaskRepository())->getOne($id);
+
+            //var_dump($_POST['reviewStars'], 'Пробел', $_POST['txtArea']);
+
+            if($_SESSION['id_user'] != $task->customerId) {
+                header("Location: /");
+            } else {
+                $feedback = new Feedback($_POST['reviewStars'], $_POST['txtArea'], $id);
+                //var_dump($feedback);
+                (new FeedbackRepository())->insert($feedback);
+                header("Location: /");
+            }
+
+        }
+
+
+        echo $this->render("cabinet/review");
     }
 
 

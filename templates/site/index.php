@@ -3,8 +3,8 @@
 	<h4>Поможем в поиске добросовестных исполнителей ваших целей</h4>
 	<form action="/task/create" method="post" class="banner__form">
 		<input type="text" class="banner__input" name="task-name"
-					 placeholder="Напишите задачу, которую нужно решить" autocomplete="off"><!--
-        --><input type="submit" class="banner__btn" value="Заказать услугу">
+					 placeholder="Напишите задачу, которую нужно решить" autocomplete="off">
+        <input type="submit" class="banner__btn" value="Заказать услугу" name="task-submit">
 	</form>
 	<div class="banner__sample">
 		Пример: <i>Сделать красивый торт на день рождения</i>
@@ -39,55 +39,18 @@
 <div class="services">
 	<h2>Услуги по категориям</h2>
 	<div class="services__wrapper">
-		<section class="services__list list-1">
-			<h3>Техника</h3>
-			<a href="#" class="services__link">Ремонт компьютеров</a>
-			<a href="#" class="services__link">Ремонт бытовой техники</a>
-			<a href="#" class="services__link">Ремонт мобильных телефонов</a>
-			<a href="#" class="services__link">Ремонт и реставрация часов</a>
-			<a href="#" class="services__link">Ремонт принтеров</a>
-			<a href="#" class="services__link">Всего подкатегорий: 123</a>
-		</section>
-		<section class="services__list list-2">
-			<h3>Услуги для дома</h3>
-			<a href="#" class="services__link">Уборка</a>
-			<a href="#" class="services__link">Сборка мебели</a>
-			<a href="#" class="services__link">Изготовление нестандартной мебели</a>
-			<a href="#" class="services__link">Сантехнические работы</a>
-			<a href="#" class="services__link">Всего подкатегорий: 123</a>
-		</section>
-		<section class="services__list list-3">
-			<h3>Транспорт</h3>
-			<a href="#" class="services__link">Ремонт автомобилей</a>
-			<a href="#" class="services__link">Услуги курьеров</a>
-			<a href="#" class="services__link">Аренда автомобиля</a>
-			<a href="#" class="services__link">Погрузочные и разгрузочные работы</a>
-			<a href="#" class="services__link">Всего подкатегорий: 123</a>
-		</section>
-		<section class="services__list list-1">
-			<h3>Свободное время</h3>
-			<a href="#" class="services__link">Услуги фотографа</a>
-			<a href="#" class="services__link">Организация свадьбы</a>
-			<a href="#" class="services__link">Организация праздников</a>
-			<a href="#" class="services__link">Прокат байдарок, катамаранов</a>
-			<a href="#" class="services__link">Всего подкатегорий: 123</a>
-		</section>
-		<section class="services__list list-2">
-			<h3>Учеба</h3>
-			<a href="#" class="services__link">Репетиторы</a>
-			<a href="#" class="services__link">Курсы по вождению</a>
-			<a href="#" class="services__link">Курсы по шитью</a>
-			<a href="#" class="services__link">Курсы по макияжу</a>
-			<a href="#" class="services__link">Всего подкатегорий: 123</a>
-		</section>
-		<section class="services__list list-3">
-			<h3>Красота и здоровье</h3>
-			<a href="#" class="services__link">Массаж</a>
-			<a href="#" class="services__link">Косметолог</a>
-			<a href="#" class="services__link">Стилист</a>
-			<a href="#" class="services__link">Маникюр</a>
-			<a href="#" class="services__link">Всего подкатегорий: 123</a>
-		</section>
+
+        <?php $i=0; ?>
+        <?php foreach ($dataCategory as $category): ?>
+        <section class="services__list list-1">
+            <h3><?= array_keys($dataCategory)[$i++] ?></h3>
+            <?php foreach ($category as $subcategory): ?>
+                <a href="#" class="services__link"><?= $subcategory ?></a>
+            <?php endforeach; ?>
+            <p class="p_services__link">Всего подкатегорий: <?= count($category) ?></p>
+        </section>
+        <?php endforeach; ?>
+
 	</div>
-	<a href="#" class="btn btn--default btn--centered btn--inline-block">Все услуги</a>
+	<a href="/task/all" class="btn btn--default btn--centered btn--inline-block">Все задачи</a>
 </div>

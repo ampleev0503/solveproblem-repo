@@ -407,9 +407,13 @@
 	line-height: 30px;
 }
 
-.services__link:last-child {
+.p_services__link {
 	margin-top: 20px;
 	font-weight: 700;
+	text-align: left;
+	font-size: 20px;
+	color: #484848;
+	line-height: 30px;
 }
 
 .services__link:hover {
@@ -1297,15 +1301,15 @@
 
 .subsection__left {
 	text-align: left;
+}
+
+.subsection__header h2:hover {
+	color: #6acdb1;
 	cursor: pointer;
 }
 
-.subsection__header:hover h2 {
-	color: #6acdb1;
-}
-
 /*.subsection__left:hover {*/
-	/*color: #6acdb1;*/
+/*color: #6acdb1;*/
 /*}*/
 
 .subsection__right {
@@ -1351,8 +1355,10 @@
 }
 
 .subsection__fname {
-	margin-top: 10px;
+	display: block;
+	margin-top: 9px;
 	margin-left: 16px;
+	margin-bottom: 12px;
 	color: #42a4ff;
 	letter-spacing: 1.3px;
 }
@@ -1375,6 +1381,7 @@
 	letter-spacing: 2px;
 	text-align: center;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .subsection__btn-select:hover {
@@ -1387,6 +1394,7 @@
 
 .subsection__btn-select--active {
 	background-color: #fdc9ac;
+	cursor: text;
 }
 
 .subsection__btn-select--top {
@@ -1582,6 +1590,7 @@
 }
 
 .subsection__performer-name {
+	display: block;
 	margin: 0 auto;
 	font-size: 18px;
 	color: #42a4ff;
@@ -1802,7 +1811,8 @@
 }
 
 .task__fname {
-	margin-top: 0;
+	display: block;
+	margin-top: 12px;
 	color: #42a4ff;
 	font-size: 22px;
 	line-height: 34px;
@@ -1961,6 +1971,12 @@
 .profile__avatar-wrap:hover > .profile__hover-effect {
 	display: block;
 }
+.profile__avatar-wrap:hover > .profile__circle {
+	display: flex;
+}
+.profile__avatar-wrap:hover > .profile__add-photo {
+	display: block;
+}
 
 .profile__hover-effect {
 	display: none;
@@ -1973,7 +1989,7 @@
 }
 
 .profile__circle {
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	margin: 27px auto -21px auto;
@@ -1997,6 +2013,7 @@
 }
 
 .profile__add-photo {
+	display: none;
 	font-size: 20px;
 	margin: 30px;
 	letter-spacing: 1.5px;
@@ -2199,6 +2216,7 @@
 
 .profile__task-name {
 	border-bottom: 1px solid #9b9b9b;
+	color: #9b9b9b;
 }
 
 .profile__review-expand {
@@ -2407,8 +2425,10 @@
 }
 
 .services-subsection__fname {
-	margin-top: 16px;
+	display: block;
+	margin-top: 12px;
 	margin-left: 16px;
+	margin-bottom: 12px;
 	color: #42a4ff;
 	letter-spacing: 1.3px;
 }
@@ -2459,4 +2479,108 @@
 
 .services-price--subsection {
 	margin: 12px 0 25px 0;
+}
+
+.assessment-page__title {
+	margin: 0 auto;
+	font-size: 42px;
+	font-weight: bold;
+	letter-spacing: 3.29px;
+	line-height: 42px;
+	color: #575757;
+	text-align: center;
+}
+
+.assessment-page__description {
+	text-align: center;
+}
+
+#assessment-form {
+ width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+	background: url('http://positivecrash.com/wp-content/uploads/ico-s71a7fdede6.png') no-repeat;
+}
+
+#reviewStars-input {
+	position: absolute;
+	float: left;
+	margin-left: 470px;
+	justify-content: space-between;
+}
+
+#reviewStars-input input {
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+	width: 43px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	z-index: 0;
+}
+
+#reviewStars-input input:checked ~ label {
+	background-position: 0 -40px;
+	height: 40px;
+	width: 43px;
+}
+
+#reviewStars-input label {
+	/*background-position: 0 0;*/
+	height: 40px;
+	width: 43px;
+	float: right;
+	cursor: pointer;
+	margin-right: 10px;
+	position: relative;
+	z-index: 1;
+}
+
+#reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+	background-position: 0 -40px;
+	height: 40px;
+	width: 43px;
+}
+
+#reviewStars-input #star-0 {
+	left: 1px;
+}
+
+#reviewStars-input #star-1 {
+	left: 53px;
+}
+
+#reviewStars-input #star-2 {
+	left: 106px;
+}
+
+#reviewStars-input #star-3 {
+	left: 159px;
+}
+
+#reviewStars-input #star-4 {
+	left: 212px;
+}
+
+
+#value-comment {
+	margin-left: 210px;
+	margin-top: 70px;
+	border-radius: 10px;
+	outline: none;
+	resize: none;
+}
+#value-comment:focus {
+	border: 1px solid #6acdb1;
+	box-shadow: 0 0 12.96px 5.04px rgba(106, 205, 177, 0.6);
+}
+
+#send {
+	margin-left: 470px;
+	margin-top: 20px;
+	margin-bottom: 100px;
+	cursor: pointer;
 }

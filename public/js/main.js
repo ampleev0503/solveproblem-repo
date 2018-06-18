@@ -59,8 +59,9 @@ $(document).ready(function() {
                             class: 'subsection__wrap'
                         });
 
-                        var $pFName = $('<p />', {
+                        var $pFName = $('<a />', {
                             class: 'subsection__fname',
+                            href: '/user?id=' + data[i].userId,
                             text: data[i].firstName
                         });
 
@@ -245,8 +246,9 @@ $(document).ready(function() {
                             class: 'subsection__wrap'
                         });
 
-                        var $pFName = $('<p />', {
+                        var $pFName = $('<a />', {
                             class: 'subsection__fname',
+                            href: '/user?id=' + data[i].userId,
                             text: data[i].firstName
                         });
 
@@ -429,8 +431,9 @@ $(document).ready(function() {
                             class: 'subsection__wrap'
                         });
 
-                        var $pFName = $('<p />', {
+                        var $pFName = $('<a />', {
                             class: 'subsection__fname',
+                            href: '/user?id=' + data[i].userId,
                             text: data[i].firstName
                         });
 
@@ -828,8 +831,9 @@ $(document).ready(function() {
                             class: 'subsection__wrap'
                         });
 
-                        var $pFName = $('<p />', {
+                        var $pFName = $('<a />', {
                             class: 'subsection__fname',
+                            href: '/user?id=' + data[i].petexeId,
                             text: data[i].firstName
                         });
 
@@ -1054,8 +1058,9 @@ $(document).ready(function() {
                             class: 'subsection__wrap'
                         });
 
-                        var $pFName = $('<p />', {
+                        var $pFName = $('<a />', {
                             class: 'subsection__fname',
+                            href: '/user?id=' + data[i].userId,
                             text: data[i].firstName
                         });
 
@@ -1363,8 +1368,9 @@ $(document).ready(function() {
                         });
                         $pPer.appendTo($divConRight);
 
-                        var $pFName = $('<p />', {
+                        var $pFName = $('<a />', {
                             class: 'subsection__performer-name',
+                            href: '/user?id=' + data[i].userId,
                             text: data[i].firstName
                         });
 
@@ -1397,7 +1403,7 @@ $(document).ready(function() {
 
                         var $pWriteReview = $('<a />', {
                             class: 'subsection__write-review',
-                            href: '#',
+                            href: '/cabinet/review?id=' + data[i].id,
                             text: 'Написать отзыв'
                         });
 
@@ -1478,9 +1484,9 @@ $(document).ready(function() {
 
     // Аккордион
 
-    $('.tab-section--customer').on('click', '.subsection__header .subsection__left', function() {
+    $('.tab-section--customer').on('click', '.subsection__header .subsection__left h2', function() {
         console.log($(this));
-        $(this).parent().next('.subsection__content').toggleClass('subsection__content--visible');
+        $(this).parent().parent().next('.subsection__content').toggleClass('subsection__content--visible');
         if($(this).find('.icon-down-open-mini').hasClass('icon-down-open-mini')){
             $(this).find('.icon-down-open-mini').removeClass('icon-down-open-mini').addClass('icon-up-open-mini');
         } else {
@@ -1490,7 +1496,7 @@ $(document).ready(function() {
 
 
 
-    // кнопка стать исполнителем btn-do-as-executor
+    // кнопка стать исполнителем
     $('.tab-section--customer').on('click', '.btn-do-as-executor', function() {
         console.log($(this));
 
@@ -1509,7 +1515,7 @@ $(document).ready(function() {
         });
     });
 
-    // кнопка завершить btn-finish-task
+    // кнопка завершить
     $('.tab-section--customer').on('click', '.btn-finish-task', function() {
         console.log($(this));
 
@@ -1527,7 +1533,7 @@ $(document).ready(function() {
         });
     });
 
-    // кнопка снять исполнителя change-executor
+    // кнопка снять исполнителя
     $('.tab-section--customer').on('click', '.change-executor', function() {
         console.log($(this));
 

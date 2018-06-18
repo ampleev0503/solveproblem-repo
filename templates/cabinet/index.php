@@ -12,6 +12,10 @@
 //    var_dump("Массив Не пуст");
 //?>
 
+<div class="bread-crumbs">
+    <a href="/" class="bread-crumbs__link"><i class="icon-left-open-big"></i>На&nbsp;главную</a>
+</div>
+
 <!--Мои заказы-->
 
 <div class="orders-block">
@@ -42,10 +46,10 @@
                             <a class="services-subsection__title" href="<?= $task->getUrl() ?>"><?= $task->name?></a>
                             <img src="img/avatar1.jpg" alt="avatar" class="subsection__avatar">
                             <div class="subsection__wrap">
-                                <p class="subsection__fname">
+                                <a class="subsection__fname" href="/user?id=<?= $task->userId?>">
                                     <?= $task->firstName?>
                                     <span class="subsection__sname"><?= $task->lastName?></span>
-                                </p>
+                                </a>
                                 <p class="subsection__review">
                                     Отзывы:
                                     <i class="icon-thumbs-up-alt"></i>

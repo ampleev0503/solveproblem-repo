@@ -1,0 +1,64 @@
+Сборка html страниц
+--------------------------------------
+1. index.html
+
+    doctype-head.html
+    header-not-logged-index.html
+    index-main.html
+    footer.html
+
+2. registration.html
+
+    doctype-head.html
+    header-not-logged.html
+    bread-crumbs.html
+    registration.html
+    footer.html
+
+3. authorization.html
+
+    doctype-head.html
+    header-not-logged.html
+    bread-crumbs.html
+    authorization.html
+    footer.html
+
+4. application.html
+
+    doctype-head.html
+    header-not-logged.html
+    bread-crumbs.html
+    application.html
+    footer.html
+
+5. personal-area.html
+
+    doctype-head.html
+    header-logged.html
+    bread-crumbs.html
+    personal-area.html
+    footer.html
+
+6. password-recovery.html
+
+    doctype-head.html
+    header-not-logged.html
+    bread-crumbs.html
+    password-recovery.html
+    footer.html
+
+7. task-page.html
+
+    doctype-head.html
+    header-logged.html
+    bread-crumbs.html
+    task-page.html
+    footer.html
+
+8. assessment.html
+
+     doctype-head.html
+     header-logged.html
+     bread-crumbs.html
+     assessment.html
+     footer.html

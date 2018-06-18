@@ -25,6 +25,13 @@ class TaskRepository extends Repository
         return Task::class;
     }
 
+    public function getAll()
+    {
+        $tableName = static::getTableName();
+        $sql = "SELECT * FROM {$tableName} ORDER BY id DESC ";
+        return static::getDb()->queryAll($sql, [], static::getEntityClass());
+    }
+
     public function getTasksByIds($idsArray) {
         $tableName = static::getTableName();
 
@@ -46,7 +53,7 @@ class TaskRepository extends Repository
     public function getTasksByPotentialExecutor($id)
     {
         $tableName = static::getTableName();
-        $sql = "SELECT t.id, t.name, t.endDate, t.cost, u.firstName, u.lastName  FROM {$tableName} as t
+        $sql = "SELECT t.id, t.name, t.endDate, t.cost, u.firstName, u.lastName, u.id as userId  FROM {$tableName} as t
         inner join potential_executor_task as pet on t.id = pet.taskId
         inner join `user` as u on t.customerId = u.id
         WHERE pet.executorId = :id";
@@ -57,7 +64,7 @@ class TaskRepository extends Repository
     public function getTasksByInProgressExecutor($id)
     {
         $tableName = static::getTableName();
-        $sql = "SELECT t.id, t.name, t.endDate, t.cost, u.firstName, u.lastName  FROM {$tableName} as t
+        $sql = "SELECT t.id, t.name, t.endDate, t.cost, u.firstName, u.lastName, u.id as userId  FROM {$tableName} as t
         inner join `user` as u on t.customerId = u.id
         WHERE t.executorId = :id AND t.statusId = 2";
         return static::getDb()->queryAll($sql, [':id' => $id], static::getEntityClass());
@@ -67,7 +74,7 @@ class TaskRepository extends Repository
     public function getTasksMaded($id)
     {
         $tableName = static::getTableName();
-        $sql = "SELECT t.id, t.name, t.endDate, t.cost, u.firstName, u.lastName  FROM {$tableName} as t
+        $sql = "SELECT t.id, t.name, t.endDate, t.cost, u.firstName, u.lastName, u.id as userId  FROM {$tableName} as t
         inner join `user` as u on t.customerId = u.id
         WHERE t.executorId = :id AND t.statusId = 3";
         return static::getDb()->queryAll($sql, [':id' => $id], static::getEntityClass());
@@ -99,7 +106,7 @@ class TaskRepository extends Repository
     // получение задач "В процессе"
     public function getTasksInProcess($id) {
         $tableName = static::getTableName();
-        $sql = "SELECT t.id, t.name, t.description, t.cost, t.executorId, t.statusId, u.firstName, u.lastName, u.telephone FROM {$tableName} as t
+        $sql = "SELECT t.id, t.name, t.description, t.cost, t.executorId, t.statusId, u.firstName, u.lastName, u.telephone, u.id as userId FROM {$tableName} as t
         inner join `user` as u on t.executorId = u.id
         WHERE t.customerId = :id AND t.statusId = 2";
         return static::getDb()->queryAll($sql, [':id' => $id], static::getEntityClass());
@@ -108,7 +115,7 @@ class TaskRepository extends Repository
     // получение задач в "Завершенные"
     public function getTasksByCustomerMaded($id) {
         $tableName = static::getTableName();
-        $sql = "SELECT t.id, t.name, t.description, t.startDate, t.endDate, t.cost, t.executorId, t.statusId, u.firstName, u.lastName, u.telephone FROM {$tableName} as t
+        $sql = "SELECT t.id, t.name, t.description, t.startDate, t.endDate, t.cost, t.executorId, t.statusId, u.firstName, u.lastName, u.telephone, u.id as userId FROM {$tableName} as t
         inner join `user` as u on t.executorId = u.id
         WHERE t.customerId = :id AND t.statusId = 3";
         return static::getDb()->queryAll($sql, [':id' => $id], static::getEntityClass());

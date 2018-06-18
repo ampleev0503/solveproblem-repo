@@ -48,23 +48,23 @@
 						<ul class="dropdown">
 							<li class="dropdown__item">
 								<span></span>
-								<a href="#" class="dropdown__link">
+								<a href="/user?id=<?= $_SESSION['id_user']?>" class="dropdown__link">
 									<i class="dropdown__icon icon-user"></i>
 									Профиль
 								</a>
 							</li>
-							<li class="dropdown__item  dropdown--active">
-								<a href="#" class="dropdown__link">
+							<li class="dropdown__item  dropdown__link">
+								<a href="/cabinet" class="dropdown__link">
 									<i class="dropdown__icon icon-check"></i>
 									Мои заказы
 								</a>
 							</li>
-							<li class="dropdown__item">
-								<a href="#" class="dropdown__link">
-									<i class="dropdown__icon icon-cog-1"></i>
-									Настройки
-								</a>
-							</li>
+<!--							<li class="dropdown__item">-->
+<!--								<a href="#" class="dropdown__link">-->
+<!--									<i class="dropdown__icon icon-cog-1"></i>-->
+<!--									Настройки-->
+<!--								</a>-->
+<!--							</li>-->
 							<li class="dropdown__item">
 								<a href="/logout" class="dropdown__link">
 									<i class="dropdown__icon icon-logout-1"></i>

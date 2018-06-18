@@ -57,7 +57,6 @@ class TaskController extends Controller
 
         // Проверяем: была ли нажата кнопка "Опубликовать"
         if (isset($_POST['submitCreate'])) {
-
             $name = trim($_POST['nameTask']); // название задачи
             $description = trim($_POST['full-description']); // полное описание
             $startDate = date('Y-m-d' ,strtotime(($_POST['startDate']))); // предполагаемая дата начала выполнения
@@ -82,7 +81,10 @@ class TaskController extends Controller
             header('Location: /');
         }
 
-        echo $this->render("task/index", ['dataCategory' => $dataCategory]);
+        if (isset($_POST['task-submit']))
+            $taskName = trim($_POST['task-name']);
+
+        echo $this->render("task/index", ['dataCategory' => $dataCategory, 'taskName' => $taskName]);
     }
 
     public function actionAll() {
@@ -123,8 +125,9 @@ class TaskController extends Controller
             if (!Authorization::authUser())
                 header("Location: /login");
 
-            $potentialExecutorTask = new PotentialExecutorTask($_SESSION['id_user'], $task['id'], "Привет. Могу выполнить это задание.");
+            $potentialExecutorTask = new PotentialExecutorTask($_SESSION['id_user'], $task->id, "Привет. Могу выполнить это задание.");
             (new PotentialExecutorTaskRepository())->insert($potentialExecutorTask);
+            header("Location: " . $task->getUrl());
         }
 
         $potentialExecutorTaskItems = (new PotentialExecutorTaskRepository())::getTasksByExecutorId($task->id);
@@ -194,5 +197,7 @@ class TaskController extends Controller
         $itemsTask = (new TaskRepository())->getTasksByCustomerMaded($_SESSION['id_user']);
         echo json_encode($itemsTask);
     }
+
+
 
 }

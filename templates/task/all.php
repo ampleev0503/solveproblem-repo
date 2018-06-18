@@ -20,10 +20,10 @@
                         <a class="services-subsection__title" href="<?= $task->getUrl() ?>"><?= $task->name?></a>
                         <img src="../img/avatar1.jpg" alt="avatar" class="services-subsection__avatar">
                         <div class="services-subsection__wrap">
-                            <p class="services-subsection__fname">
+                            <a class="services-subsection__fname" href="/user?id=<?= $dataUser[$task->id][0]?>">
                                 <?= $dataUser[$task->id][1]?>
                                 <span class="services-subsection__sname"><?= $dataUser[$task->id][2]?></span>
-                            </p>
+                            </a>
                             <p class="services-subsection__review">
                                 Отзывы:
                                 <i class="icon-thumbs-up-alt"></i>
